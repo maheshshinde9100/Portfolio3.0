@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Profile - MAHESH SHINDE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFA116, #F89E1B);
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid #FFA116;
+            object-fit: cover;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .username {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .about {
+            background: linear-gradient(135deg, #FFA116, #F89E1B);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            text-align: left;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .skills {
+            margin-top: 20px;
+        }
+        
+        .skills h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .skill-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .leetcode-stats {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .leetcode-stats h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .stats-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .stats-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .link-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .link-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .leetcode {
+            background: #FFA116;
+            color: white;
+        }
+        
+        .github {
+            background: #333;
+            color: white;
+        }
+        
+        .linkedin {
+            background: #0077b5;
+            color: white;
+        }
+        
+        .website {
+            background: #FFA116;
+            color: white;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+        
+        @media (max-width: 480px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div id="loading" class="loading">Loading profile...</div>
+        <div id="profile-content" style="display: none;">
+            <!-- Content will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        async function fetchProfile() {
+            try {
+                const response = await fetch('https://alfa-leetcode-api.onrender.com/code-with-mahesh');
+                const data = await response.json();
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('profile-content').style.display = 'block';
+                
+                document.getElementById('profile-content').innerHTML = `
+                    <img src="${data.avatar}" alt="Avatar" class="avatar">
+                    <div class="name">${data.name}</div>
+                    <div class="username">@${data.username}</div>
+                    <div class="about">${data.about}</div>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Ranking</div>
+                            <div class="info-value">#${data.ranking.toLocaleString()}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Reputation</div>
+                            <div class="info-value">${data.reputation}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Country</div>
+                            <div class="info-value">${data.country}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Birthday</div>
+                            <div class="info-value">${data.birthday}</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: left; padding: 10px; background: #f8f9fa; border-radius: 8px; margin-bottom: 15px;">
+                        <div class="info-label">School</div>
+                        <div class="info-value" style="font-size: 12px;">${data.school}</div>
+                    </div>
+                    
+                    <div class="skills">
+                        <h4>Skills</h4>
+                        <div class="skill-tags">
+                            ${data.skillTags.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="leetcode-stats">
+                        <h4>LeetCode Statistics</h4>
+                        <div class="stats-card">
+                            <img src="https://leetcard.jacoblin.cool/code-with-mahesh" alt="LeetCode Stats" class="stats-image" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://leetcode.com/u/code-with-mahesh/" target="_blank" class="link-btn leetcode">LeetCode</a>
+                        <a href="${data.gitHub}" target="_blank" class="link-btn github">GitHub</a>
+                        <a href="${data.linkedIN}" target="_blank" class="link-btn linkedin">LinkedIn</a>
+                        <a href="${data.website[0]}" target="_blank" class="link-btn website">Portfolio</a>
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById('loading').innerHTML = 'Error loading profile';
+                console.error('Error:', error);
+            }
+        }
+        
+        fetchProfile();
+    </script>
+</body>
+</html>
