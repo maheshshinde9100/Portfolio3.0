@@ -176,7 +176,7 @@ return (
     </nav>
 
     {/* Hero */}
-    <section id="hero" className="pt-32 md:pt-40 min-h-screen flex items-center justify-center relative">
+    <section id="hero" className="pt-20 md:pt-30 min-h-screen flex items-center justify-center relative">
       <motion.div style={{ y }} className="text-center z-10 px-6">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
@@ -212,7 +212,7 @@ return (
             </span>
           </h1>
           <p className="text-lg md:text-2xl text-white/80">
-            Full-Stack Developer • Android Developer • Java Developer
+            Full-Stack Developer • Java Developer • Android Developer 
           </p>
         </motion.div>
 
