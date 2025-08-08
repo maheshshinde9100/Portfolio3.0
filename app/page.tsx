@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Briefcase, Award, ChevronDown, Download, Code2 } from 'lucide-react'
+import ProjectsGallery from '@/components/projects-gallery'
+import { allProjects } from '@/data/projects'
 
 type Skill = { name: string; level: number; from: string; to: string }
 type Experience = { title: string; company: string; duration: string; description: string; type: string }
@@ -27,42 +29,6 @@ const skills: Skill[] = [
   { name: 'Python', level: 80, from: '#22c55e', to: '#06b6d4' },
   { name: 'MongoDB', level: 75, from: '#22c55e', to: '#84cc16' },
   { name: 'Firebase', level: 80, from: '#f59e0b', to: '#ef4444' },
-]
-
-const projects: Project[] = [
-  {
-    title: 'Mini Fullstack Instagram Clone',
-    description:
-      'Fullstack Instagram clone: profile, posts, follow/unfollow, and comments with real-time updates.',
-    tech: ['ReactJS', 'Firebase', 'Tailwind CSS'],
-    github: 'https://github.com/coder-mahi/fullstack-instagram-clone',
-    demo: 'https://insta-clone-by-mahesh-shinde.netlify.app/',
-    image: '/placeholder.svg?height=220&width=420',
-  },
-  {
-    title: 'TaskTracker',
-    description: 'Task management web app with lists, priorities, and progress tracking.',
-    tech: ['ReactJS', 'ExpressJs', 'NodeJs', 'MongoDB'],
-    github: 'https://github.com/coder-mahi/TaskTracker',
-    demo: null,
-    image: '/placeholder.svg?height=220&width=420',
-  },
-  {
-    title: 'Student Mentoring Application',
-    description: 'Android app for student-mentor connect with chat, scheduling, and progress.',
-    tech: ['Android', 'Java'],
-    github: 'https://github.com/coder-mahi/SanjivaniMentorMeet3',
-    demo: null,
-    image: '/placeholder.svg?height=220&width=420',
-  },
-  {
-    title: 'Portfolio Website',
-    description: 'Responsive portfolio showcasing projects and skills.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/coder-mahi/Portfolio2.0',
-    demo: 'https://shindemaheshportfolio.netlify.app/',
-    image: '/placeholder.svg?height=220&width=420',
-  },
 ]
 
 const experiences: Experience[] = [
@@ -176,7 +142,7 @@ return (
     </nav>
 
     {/* Hero */}
-    <section id="hero" className="pt-20 md:pt-30 min-h-screen flex items-center justify-center relative">
+    <section id="hero" className="pt-32 md:pt-40 min-h-screen flex items-center justify-center relative">
       <motion.div style={{ y }} className="text-center z-10 px-6">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
@@ -212,7 +178,7 @@ return (
             </span>
           </h1>
           <p className="text-lg md:text-2xl text-white/80">
-            Full-Stack Developer • Java Developer • Android Developer 
+            Full-Stack Developer • Android Developer • Java Developer
           </p>
         </motion.div>
 
@@ -475,72 +441,14 @@ return (
       <div className="container mx-auto px-6">
         <motion.div {...fadeUp} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Featured Projects
+            Projects & Hackathons
           </h2>
+          <p className="text-white/70 max-w-2xl mx-auto">
+            Explore my personal builds and hackathon projects. Use filters to narrow by category or tech.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
-            >
-              <Card className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 transition-all h-full overflow-hidden">
-                <div className="aspect-video overflow-hidden relative">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl text-cyan-300">{project.title}</CardTitle>
-                  <CardDescription className="text-white/80">{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="border-white/20 text-white/85 hover:bg-white/10 transition-colors"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex gap-4">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-cyan-400/40 text-cyan-300 hover:bg-cyan-500 hover:text-black transition-colors"
-                      onClick={() => window.open(project.github, '_blank')}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                    {project.demo && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="border-purple-400/40 text-purple-300 hover:bg-purple-500 hover:text-black transition-colors"
-                        onClick={() => window.open(project.demo!, '_blank')}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        <ProjectsGallery initialProjects={allProjects} initialShowCount={6} />
       </div>
     </section>
 
@@ -690,7 +598,7 @@ return (
     {/* Footer */}
     <footer className="py-8 border-t border-white/10 bg-black/30 backdrop-blur-xl">
       <div className="container mx-auto px-6 text-center">
-        <p className="text-white/60">© 2025 Mahesh.Dev . All Rights Reserved.</p>
+        <p className="text-white/60">© 2025 Mahesh Shinde. All Rights Reserved.</p>
       </div>
     </footer>
   </div>
