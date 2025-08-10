@@ -19,17 +19,25 @@ const { scrollYProgress } = useScroll()
 const y = useTransform(scrollYProgress, [0, 1], ['0%', '40%'])
 
 const skills: Skill[] = [
-  { name: 'HTML', level: 95, from: '#22d3ee', to: '#a78bfa' },
-  { name: 'CSS', level: 90, from: '#a78bfa', to: '#f472b6' },
-  { name: 'JavaScript', level: 85, from: '#f59e0b', to: '#f472b6' },
-  { name: 'ReactJS', level: 80, from: '#06b6d4', to: '#7c3aed' },
-  { name: 'Java', level: 90, from: '#ef4444', to: '#f59e0b' },
-  { name: 'C++', level: 85, from: '#8b5cf6', to: '#ec4899' },
-  { name: 'SQL', level: 85, from: '#10b981', to: '#14b8a6' },
-  { name: 'Python', level: 80, from: '#22c55e', to: '#06b6d4' },
-  { name: 'MongoDB', level: 75, from: '#22c55e', to: '#84cc16' },
-  { name: 'Firebase', level: 80, from: '#f59e0b', to: '#ef4444' },
+  { name: "Java", level: 91, from: "#ef4444", to: "#f97316" }, // Red-Orange
+  { name: "Spring Boot", level: 92, from: "#16a34a", to: "#22c55e" }, // Green
+  { name: "Hibernate", level: 90, from: "#84cc16", to: "#a3e635" }, // Lime
+  { name: "JavaScript", level: 85, from: "#f59e0b", to: "#eab308" }, // Gold-Yellow
+  { name: "React.js", level: 80, from: "#0ea5e9", to: "#7c3aed" }, // Blue-Purple
+  { name: "Tailwind CSS", level: 80, from: "#06b6d4", to: "#22d3ee" }, // Cyan
+  { name: "Node.js", level: 70, from: "#10b981", to: "#14b8a6" }, // Teal
+  { name: "MongoDB", level: 89, from: "#22d3ee", to: "#818cf8" }, // Cyan-Purple
+  // { name: "MySQL", level: 85, from: "#60a5fa", to: "#38bdf8" }, // Light Blue
+  { name: "Redis", level: 60, from: "#f43f5e", to: "#fb7185" }, // Pink
+  { name: "Docker", level: 65, from: "#2563eb", to: "#1d4ed8" }, // Deep Blue
+  { name: "Git", level: 90, from: "#f43f5e", to: "#dc2626" }, // Red
+  { name: "Postman", level: 95, from: "#f97316", to: "#f59e0b" }, // Orange
+  { name: "Google Cloud", level: 72, from: "#4285F4", to: "#34A853" }, // Google blue-green
+  { name: "Maven", level: 75, from: "#FF5722", to: "#FF9800" }, // Orange gradient
+  { name: "Android Studio", level: 86, from: "#3DDC84", to: "#00C853" } // Android green
 ]
+
+
 
 const experiences: Experience[] = [
   {
