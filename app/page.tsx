@@ -158,11 +158,10 @@ return (
           transition={{ duration: 0.8 }}
           className="mb-10"
         >
-          {/* Replace icon with your profile image */}
+          {/* Previous theme of ring */}
+          {/*
           <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
-            {/* Glow ring */}
             <div className="absolute inset-0 rounded-full blur-2xl opacity-60 bg-[conic-gradient(at_50%_50%,#22d3ee,45deg,#a78bfa,225deg,#ec4899,360deg)] animate-[spin_10s_linear_infinite]" />
-            {/* Progress ring decorative */}
             <div
               className="absolute inset-0 rounded-full p-1"
               style={{
@@ -179,7 +178,40 @@ return (
               </div>
             </div>
           </div>
+          */}
 
+  {/* Newly added theme for profile ring*/}
+            <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
+              {/* Glow ring (kept) */}
+              <div className="absolute inset-0 rounded-full blur-2xl opacity-60 bg-[conic-gradient(at_50%_50%,#22d3ee,45deg,#a78bfa,225deg,#ec4899,360deg)] animate-[spin_10s_linear_infinite]" />
+
+              {/* Rotating blue ring around the avatar */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full pointer-events-none z-10 motion-safe:animate-[spin_8s_linear_infinite] motion-reduce:animate-none"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, rgba(34,211,238,.9), rgba(167,139,250,.9), rgba(236,72,153,.9), rgba(34,211,238,.9))",
+                  WebkitMask: "radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0)",
+                  mask: "radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0)",
+                  opacity: 0.9,
+                }}
+              />
+
+              {/* Static inner avatar container */}
+              <div className="absolute inset-0 rounded-full p-1">
+                <div className="w-full h-full rounded-full bg-black/70 backdrop-blur-xl p-1">
+                  <img
+                    src="/profile.png"
+                    alt="Mahesh Shinde profile photo"
+                    className="w-full h-full rounded-full object-cover"
+                    crossOrigin="anonymous"
+                  />
+                </div>
+              </div>
+            </div>
+
+            
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Mahesh Shinde
