@@ -150,7 +150,7 @@ return (
     </nav>
 
     {/* Hero */}
-    <section id="hero" className="pt-32 md:pt-40 min-h-screen flex items-center justify-center relative">
+    <section id="hero" className="pt-32 md:pt-35 min-h-screen flex items-center justify-center relative">
       <motion.div style={{ y }} className="text-center z-10 px-6">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
@@ -159,8 +159,7 @@ return (
           className="mb-10"
         >
           {/* Previous theme of ring */}
-          {/*
-          <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
+          {/* <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
             <div className="absolute inset-0 rounded-full blur-2xl opacity-60 bg-[conic-gradient(at_50%_50%,#22d3ee,45deg,#a78bfa,225deg,#ec4899,360deg)] animate-[spin_10s_linear_infinite]" />
             <div
               className="absolute inset-0 rounded-full p-1"
@@ -177,15 +176,12 @@ return (
                 />
               </div>
             </div>
-          </div>
-          */}
+          </div> */}
+         
 
   {/* Newly added theme for profile ring*/}
             <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
-              {/* Glow ring (kept) */}
               <div className="absolute inset-0 rounded-full blur-2xl opacity-60 bg-[conic-gradient(at_50%_50%,#22d3ee,45deg,#a78bfa,225deg,#ec4899,360deg)] animate-[spin_10s_linear_infinite]" />
-
-              {/* Rotating blue ring around the avatar */}
               <div
                 aria-hidden="true"
                 className="absolute inset-0 rounded-full pointer-events-none z-10 motion-safe:animate-[spin_8s_linear_infinite] motion-reduce:animate-none"
@@ -198,7 +194,6 @@ return (
                 }}
               />
 
-              {/* Static inner avatar container */}
               <div className="absolute inset-0 rounded-full p-1">
                 <div className="w-full h-full rounded-full bg-black/70 backdrop-blur-xl p-1">
                   <img
