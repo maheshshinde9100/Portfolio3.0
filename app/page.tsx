@@ -188,7 +188,7 @@ return (
           transition={{ duration: 0.8, delay: 0.15 }}
           className="flex flex-wrap justify-center gap-4 mb-10"
         >
-          {['ReactJS', 'Java', 'Android', 'MongoDB'].map((chip) => (
+          {['ReactJS', 'Java', 'Spring Boot', 'Android', 'Google Cloud'].map((chip) => (
             <Badge
               key={chip}
               variant="outline"
@@ -279,7 +279,7 @@ return (
             <Card className="bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 transition-all">
               <CardContent className="p-8 space-y-6">
                 <p className="text-white/85 leading-relaxed">
-                  I specialize in React, Node.js, and MongoDB, with strong Java and Android experience. My journey
+                  I specialize in React, Spring Boot and MongoDB, with strong Java and Android experience. My journey
                   started in college and evolved through internships and hands-on projects.
                 </p>
                 <p className="text-white/85 leading-relaxed">

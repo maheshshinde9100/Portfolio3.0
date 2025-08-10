@@ -7,13 +7,16 @@ export const metadata: Metadata = {
   title: 'mahesh.dev',
   description: 'Mahesh Shinde | Portfolio',
   generator: 'mahesh.dev',
+  
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: 
+    Readonly<{
   children: React.ReactNode
 }>) {
+
   return (
     <html lang="en">
       <head>
