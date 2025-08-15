@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Briefcase, Award, ChevronDown, Download, Code2 } from 'lucide-react'
+import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, Briefcase, Award, ChevronDown, Download, Code2, InstagramIcon, Code } from 'lucide-react'
 import ProjectsGallery from '@/components/projects-gallery'
 import { allProjects } from '@/data/projects'
 
@@ -67,11 +67,15 @@ const experiences: Experience[] = [
 ]
 
 const achievements = [
-  { title: 'LeetCode 50 Day Streak', platform: 'LeetCode' },
-  { title: 'LeetCode 100 Problems', platform: 'LeetCode' },
+  { title: 'LeetCode 50 Days Streak 2024', platform: 'LeetCode' },
+  { title: 'LeetCode 50 Days Streak 2025', platform: 'LeetCode' },
+  { title: 'LeetCode 100 Days Streak 2025', platform: 'LeetCode' },
+  { title: 'LeetCode 288+ Problems Solved', platform: 'LeetCode' },
+  // { title: '(OCI) Oracle Cloud Infrastructure Foundations Associate', platform: 'Oracle' },
+  { title: 'Google CLoud Skill Boost 28 Badges', platform: 'Google Cloud' },
   { title: 'Java Basics Certification', platform: 'HackerRank' },
   { title: 'React Basics Certification', platform: 'HackerRank' },
-  { title: 'Full Stack Bootcamp', platform: 'GeeksforGeeks' },
+  { title: 'Full Stack Bootcamp 6 Weeks', platform: 'GeeksforGeeks' },
   { title: 'UX Design Foundations', platform: 'Coursera' },
 ]
 
@@ -323,7 +327,7 @@ return (
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <Stat number="167+" label="LeetCode Days" highlight="text-purple-300" />
-                  <Stat number="100+" label="Problems Solved" highlight="text-cyan-300" />
+                  <Stat number="288+" label="Problems Solved" highlight="text-cyan-300" />
                 </div>
               </CardContent>
             </Card>
@@ -610,6 +614,7 @@ return (
                 {[
                   { name: 'GitHub', url: 'https://github.com/maheshshinde9100', icon: Github },
                   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/maheshshinde9100', icon: Linkedin },
+                  { name: 'Instagram', url: 'https://www.instagram.com/mahi_shinde01/', icon: Instagram },
                   { name: 'LeetCode', url: 'https://leetcode.com/u/code-with-mahesh/', icon: Code2 },
                 ].map((s, i) => (
                   <Button
