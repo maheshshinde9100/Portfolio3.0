@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, Briefcase, Award, ChevronDown, Download, Code2, InstagramIcon, Code } from 'lucide-react'
 import ProjectsGallery from '@/components/projects-gallery'
 import { allProjects } from '@/data/projects'
+import {getLeetcodeStats, getLeetcodeInfo} from './leetcode'
 
 type Skill = { name: string; level: number; from: string; to: string }
 type Experience = { title: string; company: string; duration: string; description: string; type: string }
@@ -37,7 +38,18 @@ const skills: Skill[] = [
   { name: "Android Studio", level: 86, from: "#3DDC84", to: "#00C853" } // Android green
 ]
 
+// useState hook for getting leetcode information
+const [leetcodeUserInfo, setLeetcodeUserInfo] = useState<any>(null);
+const [leetcodeStatsInfo, setLeetcodeStatsInfo] = useState<any>(null);
+useEffect(() => {
+    getLeetcodeInfo().then(data => {
+      setLeetcodeUserInfo(data);
+    });
 
+    getLeetcodeStats().then(data =>{
+      setLeetcodeStatsInfo(data);
+    })
+  }, []);
 
 const experiences: Experience[] = [
   {
@@ -70,15 +82,21 @@ const achievements = [
   { title: 'LeetCode 50 Days Streak 2024', platform: 'LeetCode' },
   { title: 'LeetCode 50 Days Streak 2025', platform: 'LeetCode' },
   { title: 'LeetCode 100 Days Streak 2025', platform: 'LeetCode' },
-  { title: 'LeetCode 288+ Problems Solved', platform: 'LeetCode' },
+  leetcodeStatsInfo ?(
+  { title: `LeetCode ${leetcodeStatsInfo.solvedProblem} + Problems Solved`, platform: 'LeetCode' }
+  ):(
+  { title: `298+ Problems Solved`, platform: 'LeetCode' }
+  ),
+
   // { title: '(OCI) Oracle Cloud Infrastructure Foundations Associate', platform: 'Oracle' },
   { title: 'Google CLoud Skill Boost 28 Badges', platform: 'Google Cloud' },
   { title: 'Java Basics Certification', platform: 'HackerRank' },
   { title: 'React Basics Certification', platform: 'HackerRank' },
   { title: 'Full Stack Bootcamp 6 Weeks', platform: 'GeeksforGeeks' },
   { title: 'UX Design Foundations', platform: 'Coursera' },
-]
+];
 
+const data =
 useEffect(() => {
   const handleScroll = () => {
     const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact']
@@ -255,7 +273,7 @@ return (
             className="border-white/30 text-white hover:bg-white hover:text-black px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
             onClick={() =>
               window.open(
-                'https://maheshshinde9100.hackerresume.io/cdbe784f-7325-4ca3-a047-9a2c4ec314cc',
+                'https://drive.google.com/file/d/1SWB7021dL8b7wyx_xtaSnbiTaRB9id3f/view?usp=sharing',
                 '_blank'
               )
             }
@@ -325,9 +343,27 @@ return (
                   I also sharpen my DSA skills on LeetCode and GeeksforGeeks which helps me think algorithmically and
                   build efficient solutions.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <Stat number="167+" label="LeetCode Days" highlight="text-purple-300" />
-                  <Stat number="288+" label="Problems Solved" highlight="text-cyan-300" />
+                <div className="grid grid-cols-2 gap-4">  
+
+      {leetcodeStatsInfo ? (
+        <Stat
+          number={`${leetcodeStatsInfo.totalSubmissionNum[0].submissions}+`}
+          label="LeetCode Submissions"
+          highlight="text-cyan-300"
+        />
+      ) : (
+        <Stat number="644+" label="LeetCode Submissions" highlight="text-purple-300" />
+      )}
+      {leetcodeStatsInfo ? (
+        <Stat
+          number={`${leetcodeStatsInfo.solvedProblem}+`}
+          label="Problems Solved"
+          highlight="text-cyan-300"
+        />
+      ) : (
+        <Stat number="298+" label="Problems Solved" highlight="text-cyan-300" />
+      )}
+
                 </div>
               </CardContent>
             </Card>
