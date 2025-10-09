@@ -37,8 +37,19 @@ export const allProjects: Project[] = [
   demo: 'https://smartwastebinsystem.netlify.app/',
   image: '/thumbnails/smart-waste-bin-thumbnail.png',
   date: '2024-04',
-}
-,
+},
+//freelance
+{
+  id: 'smart-energy-portal',
+  title: 'Smart Energy Portal',
+  description:'A comprehensive energy management system that empowers users to track, analyze, and optimize their electricity consumption while providing administrators with powerful system-wide analytics and insights.',
+  category: 'personal',
+  tech: ['ReactJS', 'NodeJS', 'ExpressJS','MongoDB','JWT', 'BCrypt'],
+  github: 'https://github.com/maheshshinde9100/SmartEnergyPortal',
+  demo: 'https://smart-energy-portal.vercel.app/',
+  image: '/thumbnails/smart-energy-portal-thumbnail.png',
+  date: '2025-10',
+},
   {
     id: 'insta-clone',
     title: 'Mini Fullstack Instagram Clone',
@@ -141,8 +152,21 @@ export const allProjects: Project[] = [
   image: '/thumbnails/neon-quiz-thumbnail.png',
   award: 'Best UI/UX',
   date: '2024-06',
-}
-,
+},
+{
+  id: 'portfolio-v3',
+  title: 'Portfolio 3.0',
+  description:
+    'Hackathon Project: Modern developer portfolio built with Next.js, TypeScript, Tailwind CSS, and ShadCN UI, featuring responsive design, dynamic project sections, and smooth animations.',
+  category: 'hackathon',
+  tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ShadCN UI'],
+  github: 'https://github.com/maheshshinde9100/Portfolio3.0',
+  demo: 'https://maheshshinde-dev.vercel.app/',
+  image: '/thumbnails/portfolio3.0-thumbnail.png',
+  award: 'Top 3',
+  date: '2025-09',
+},
+
   // Open source
 {
   id: 'dev-helper-cli',
