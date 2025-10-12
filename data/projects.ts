@@ -188,10 +188,10 @@ export const allProjects: Project[] = [
   description:
     'Web-based blood bank management system to manage donor records, blood stock, and request processing. Features barcode-based registration, donor classification, and camp management. Currently under development.',
   category: 'client',
-  tech: ['MERN Stack', 'Tailwind CSS', 'Microservices'],
+  tech: ['Next.js 15', 'Tailwind CSS'],
   github: '',
   demo: null,
-  image: '',
+  image: '/thumbnails/sanjivani-blood-bank-thumbnail.png',
   date: '2025-01',
 },
 ]
