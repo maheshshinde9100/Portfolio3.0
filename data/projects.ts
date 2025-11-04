@@ -38,18 +38,6 @@ export const allProjects: Project[] = [
   image: '/thumbnails/smart-waste-bin-thumbnail.png',
   date: '2024-04',
 },
-//freelance
-{
-  id: 'smart-energy-portal',
-  title: 'Smart Energy Portal',
-  description:'A comprehensive energy management system that empowers users to track, analyze, and optimize their electricity consumption while providing administrators with powerful system-wide analytics and insights.',
-  category: 'personal',
-  tech: ['ReactJS', 'NodeJS', 'ExpressJS','MongoDB','JWT', 'BCrypt'],
-  github: 'https://github.com/maheshshinde9100/SmartEnergyPortal',
-  demo: 'https://smart-energy-portal.vercel.app/',
-  image: '/thumbnails/smart-energy-portal-thumbnail.png',
-  date: '2025-10',
-},
   {
     id: 'insta-clone',
     title: 'Mini Fullstack Instagram Clone',
@@ -167,19 +155,19 @@ export const allProjects: Project[] = [
   date: '2025-09',
 },
 
-  // Open source
-{
-  id: 'dev-helper-cli',
-  title: 'DevHelper CLI',
-  description:
-    'Open-source command-line tool that streamlines common developer tasks like project setup, dependency installation, and Git workflows.',
-  category: 'open-source',
-  tech: ['Node.js', 'JavaScript', 'CLI'],
-  github: '',
-  demo: null,
-  image: '/thumbnails/open-source.png',
-  date: '2024-09',
-},
+  // // Open source
+// {
+//   id: 'dev-helper-cli',
+//   title: 'DevHelper CLI',
+//   description:
+//     'Open-source command-line tool that streamlines common developer tasks like project setup, dependency installation, and Git workflows.',
+//   category: 'open-source',
+//   tech: ['Node.js', 'JavaScript', 'CLI'],
+//   github: '',
+//   demo: null,
+//   image: '/thumbnails/open-source.png',
+//   date: '2024-09',
+// },
 
   //client
   {
@@ -194,4 +182,27 @@ export const allProjects: Project[] = [
   image: '/thumbnails/sanjivani-blood-bank-thumbnail.png',
   date: '2025-01',
 },
+   {
+  id: 'smart-energy-portal',
+  title: 'Smart Energy Portal',
+  description:'A comprehensive energy management system that empowers users to track, analyze, and optimize their electricity consumption while providing administrators with powerful system-wide analytics and insights.',
+  category: 'client',
+  tech: ['ReactJS', 'NodeJS', 'ExpressJS','MongoDB','JWT', 'BCrypt'],
+  github: 'https://github.com/maheshshinde9100/SmartEnergyPortal',
+  demo: 'https://smart-energy-portal.vercel.app/',
+  image: '/thumbnails/smart-energy-portal-thumbnail.png',
+  date: '2025-10',
+},
+   {
+  id: 'hotel-dhanlakshmi',
+  title: 'Hotel Dhanlakshmi',
+  description:
+    'Comprehensive hotel management system for handling room bookings, guest check-ins, payments, and staff operations. Includes real-time availability tracking, admin dashboard, and customer reservation portal. Currently under development.',
+  category: 'client',
+  tech: ['React (Vite)', 'Tailwind CSS', 'MongoDB', 'MERN Stack'],
+  github: '',
+  demo: null,
+  image: '/thumbnails/hotel-dhanlakshmi-thumbnail.png',
+  date: '2025-01',
+}, 
 ]
