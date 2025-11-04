@@ -176,7 +176,7 @@ export const allProjects: Project[] = [
   description:
     'Web-based blood bank management system to manage donor records, blood stock, and request processing. Features barcode-based registration, donor classification, and camp management. Currently under development.',
   category: 'client',
-  tech: ['Next.js 15', 'Tailwind CSS'],
+  tech: ['MERN Stack','Redux','Tailwind CSS', 'Redis'],
   github: '',
   demo: null,
   image: '/thumbnails/sanjivani-blood-bank-thumbnail.png',
@@ -201,7 +201,7 @@ export const allProjects: Project[] = [
   category: 'client',
   tech: ['React (Vite)', 'Tailwind CSS', 'MongoDB', 'MERN Stack'],
   github: '',
-  demo: null,
+  demo: 'https://hoteldhanlakshmi.netlify.app/',
   image: '/thumbnails/hotel-dhanlakshmi-thumbnail.png',
   date: '2025-01',
 }, 
