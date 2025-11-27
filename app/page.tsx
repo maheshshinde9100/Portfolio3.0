@@ -273,7 +273,7 @@ return (
             className="border-white/30 text-white hover:bg-white hover:text-black px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
             onClick={() =>
               window.open(
-                'https://drive.google.com/file/d/1SWB7021dL8b7wyx_xtaSnbiTaRB9id3f/view?usp=sharing',
+                'https://drive.google.com/file/d/190ngRUJrSDnAvsPEN3Jy_t-JiI8POi8W/view?usp=drive_link',
                 '_blank'
               )
             }
