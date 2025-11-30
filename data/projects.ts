@@ -35,7 +35,7 @@ export const allProjects: Project[] = [
   ],
   github: 'https://github.com/maheshshinde9100/SafePilot',
   demo: null,
-  image: '/thumbnails/safe-pilot-thumbnail.png',
+  image: '/thumbnails/safepilot-thumbnail.png',
   date: '2025-09',
 },
 // { //  under working
