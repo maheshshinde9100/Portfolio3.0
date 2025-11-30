@@ -10,10 +10,59 @@ export const allProjects: Project[] = [
     category: 'personal',
     tech: ['ReactJS', 'SpringBoot', 'MongoDB', 'Spring Security', 'Tailwind CSS'],
     github: 'https://github.com/maheshshinde9100/Mentee_Connect_Frontend',
-    demo: null,
+    demo: 'https://menteeconnect.vercel.app/',
     image: '/thumbnails/mentee-connect-thumbnail.png',
     date: '2024-02',
   },
+{
+  id: 'safe-pilot',
+  title: 'SafePilot',
+  description:
+    'SafePilot is an IoT-driven smart-vehicle safety system using ESP8266, multiple sensors, Hive MQTT, RFID-based door authentication, Python drowsiness detection, and a WebSocket-powered React dashboard for real-time vehicle control, alerts, and object detection.',
+  category: 'personal',
+  tech: [
+    'ESP8266',
+    'RFID',
+    'MQTT (HiveMQ)',
+    'WebSockets',
+    'Python (OpenCV)',
+    'React',
+    'Node.js',
+    'Express',
+    'Appwrite',
+    'IoT Sensors',
+    'Motor Driver L298N'
+  ],
+  github: 'https://github.com/maheshshinde9100/SafePilot',
+  demo: null,
+  image: '/thumbnails/safe-pilot-thumbnail.png',
+  date: '2025-09',
+},
+// { //  under working
+//   id: 'maitri-connect',
+//   title: 'MaitriConnect',
+//   description:
+//     'MaitriConnect is a microservices-based real-time communication platform built with Spring Boot and React, featuring Spring Cloud, Netflix Eureka service discovery, MongoDB, WebSockets, and multipart file support. It enables real-time chat, seamless file sharing, and profile management with image updates, with ongoing development of a video and voice calling service.',
+//   category: 'personal',
+//   tech: [
+//     'Spring Boot',
+//     'Microservices Architecture',
+//     'Spring Cloud',
+//     'Netflix Eureka',
+//     'React',
+//     'TailwindCSS',
+//     'MongoDB',
+//     'WebSockets',
+//     'Multipart File Handling',
+//     'Java',
+//     // 'Video and Voice Call'
+//   ],
+//   github: 'https://github.com/maheshshinde9100/MaitriConnect',
+//   demo: null,
+//   image: '/thumbnails/maitri-connect-thumbnail.png',
+//   date: '2025-10',
+// },
+
   {
   id: 'codecomplexity-ai',
   title: 'CodeComplexity.AI',
@@ -51,7 +100,7 @@ export const allProjects: Project[] = [
     date: '2024-07',
   },
 
-//   {
+//   { //under working
 //   id: 'opdheal',
 //   title: 'OPDHeal',
 //   description:
@@ -176,22 +225,11 @@ export const allProjects: Project[] = [
   description:
     'Web-based blood bank management system to manage donor records, blood stock, and request processing. Features barcode-based registration, donor classification, and camp management. Currently under development.',
   category: 'client',
-  tech: ['MERN Stack','Redux','Tailwind CSS', 'Redis'],
+  tech: ['MERN Stack','Redux Toolkit','Tailwind CSS', 'Redis'],
   github: '',
   demo: null,
   image: '/thumbnails/sanjivani-blood-bank-thumbnail.png',
-  date: '2025-01',
-},
-   {
-  id: 'smart-energy-portal',
-  title: 'Smart Energy Portal',
-  description:'A comprehensive energy management system that empowers users to track, analyze, and optimize their electricity consumption while providing administrators with powerful system-wide analytics and insights.',
-  category: 'client',
-  tech: ['ReactJS', 'NodeJS', 'ExpressJS','MongoDB','JWT', 'BCrypt'],
-  github: 'https://github.com/maheshshinde9100/SmartEnergyPortal',
-  demo: 'https://smart-energy-portal.vercel.app/',
-  image: '/thumbnails/smart-energy-portal-thumbnail.png',
-  date: '2025-10',
+  date: '2025-06',
 },
    {
   id: 'hotel-dhanlakshmi',
@@ -203,6 +241,30 @@ export const allProjects: Project[] = [
   github: '',
   demo: 'https://hoteldhanlakshmi.netlify.app/',
   image: '/thumbnails/hotel-dhanlakshmi-thumbnail.png',
-  date: '2025-01',
+  date: '2025-11',
 }, 
+   {
+  id: 'learn-with-samarth',
+  title: 'Learn With Samarth',
+  description:'Built a MERN-based platform for an influencer to showcase their courses, coding notes, PDFs, and related documents in a clean and organized way.',
+  category: 'client',
+  tech: ['ReactJS', 'NodeJS', 'ExpressJS','MongoDB','JWT', 'BCrypt'],
+  github: '',
+  demo: '',
+  image: '/thumbnails/learn-with-samarth-thumbnail.png',
+  date: '2025-10',
+},
+
+   {
+  id: 'smart-energy-portal',
+  title: 'Smart Energy Portal',
+  description:'A comprehensive energy management system that empowers users to track, analyze, and optimize their electricity consumption while providing administrators with powerful system-wide analytics and insights.',
+  category: 'client',
+  tech: ['ReactJS', 'NodeJS', 'ExpressJS','MongoDB','JWT', 'BCrypt'],
+  github: 'https://github.com/maheshshinde9100/SmartEnergyPortal',
+  demo: 'https://smart-energy-portal.vercel.app/',
+  image: '/thumbnails/smart-energy-portal-thumbnail.png',
+  date: '2025-10',
+},
+
 ]
