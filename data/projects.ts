@@ -191,7 +191,7 @@ export const allProjects: Project[] = [
     date: '2024-06',
   },
   {
-    id: 'portfolio-v3',
+    id: 'portfolio-v3-hackathon',
     title: 'Portfolio 3.0',
     description:
       'Hackathon Project: Modern developer portfolio built with Next.js, TypeScript, Tailwind CSS, and ShadCN UI, featuring responsive design, dynamic project sections, and smooth animations.',

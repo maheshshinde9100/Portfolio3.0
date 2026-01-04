@@ -8,11 +8,10 @@ import { Badge } from '@/components/ui/badge'
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, Briefcase, Award, ChevronDown, Download, Code2 } from 'lucide-react'
 import ProjectsGallery from '@/components/projects-gallery'
 import { allProjects } from '@/data/projects'
-import { getLeetcodeStats, getLeetcodeInfo } from './leetcode'
+import { getLeetcodeStats, getLeetcodeInfo, type LeetCodeStats, type LeetCodeProfile } from './leetcode'
 
 type Skill = { name: string; level: number; from: string; to: string }
 type Experience = { title: string; company: string; duration: string; description: string; type: string }
-type Project = { title: string; description: string; tech: string[]; github: string; demo?: string | null; image: string }
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('hero')
@@ -39,8 +38,8 @@ export default function Portfolio() {
   ]
 
   // useState hook for getting leetcode information
-  const [leetcodeUserInfo, setLeetcodeUserInfo] = useState<any>(null);
-  const [leetcodeStatsInfo, setLeetcodeStatsInfo] = useState<any>(null);
+  const [leetcodeUserInfo, setLeetcodeUserInfo] = useState<LeetCodeProfile | null>(null);
+  const [leetcodeStatsInfo, setLeetcodeStatsInfo] = useState<LeetCodeStats | null>(null);
   useEffect(() => {
     getLeetcodeInfo().then(data => {
       setLeetcodeUserInfo(data);
@@ -351,7 +350,7 @@ export default function Portfolio() {
                   </p>
                   <div className="grid grid-cols-2 gap-4">
 
-                    {leetcodeStatsInfo ? (
+                    {leetcodeStatsInfo?.totalSubmissionNum?.[0] ? (
                       <Stat
                         number={`${leetcodeStatsInfo.totalSubmissionNum[0].submissions}+`}
                         label="LeetCode Submissions"
@@ -368,6 +367,20 @@ export default function Portfolio() {
                       />
                     ) : (
                       <Stat number="298+" label="Problems Solved" highlight="text-cyan-300" />
+                    )}
+                    {leetcodeUserInfo && (
+                      <>
+                        <Stat
+                          number={`${leetcodeUserInfo.ranking}`}
+                          label="LeetCode Ranking"
+                          highlight="text-yellow-300"
+                        />
+                        <Stat
+                          number={`${leetcodeUserInfo.reputation}`}
+                          label="Reputation"
+                          highlight="text-pink-300"
+                        />
+                      </>
                     )}
 
                   </div>
