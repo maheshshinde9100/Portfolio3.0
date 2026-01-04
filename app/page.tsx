@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, Briefcase, Award, ChevronDown, Download, Code2 } from 'lucide-react'
+import Image from 'next/image'
 import ProjectsGallery from '@/components/projects-gallery'
 import { allProjects } from '@/data/projects'
 import { getLeetcodeStats, getLeetcodeInfo, type LeetCodeStats, type LeetCodeProfile } from './leetcode'
@@ -223,9 +224,11 @@ export default function Portfolio() {
 
               <div className="absolute inset-0 rounded-full p-1">
                 <div className="w-full h-full rounded-full bg-black/70 backdrop-blur-xl p-1">
-                  <img
+                  <Image
                     src="/profile.png"
                     alt="Mahesh Shinde profile photo"
+                    width={176}
+                    height={176}
                     className="w-full h-full rounded-full object-cover"
                     crossOrigin="anonymous"
                   />
@@ -716,7 +719,7 @@ function InfoRow({
   value,
   accent,
 }: {
-  Icon: any
+  Icon: React.ElementType
   label: string
   value: string
   accent?: string

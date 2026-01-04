@@ -2,6 +2,7 @@
 
 import type * as React from "react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 type Props = {
   src?: string
@@ -37,15 +38,17 @@ export default function ThumbnailFrame({ src, alt = "Project thumbnail", classNa
       </div>
 
       {/* Image */}
-      <img
-        src={src || fallback}
-        alt={alt}
-        className={cn(
-          "absolute inset-2 top-8 rounded-lg object-cover w-[calc(100%-1rem)] h-[calc(100%-1.5rem)]",
-          "border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,.6)]",
-          "transition-transform duration-500 group-hover:scale-[1.03]",
-        )}
-      />
+      <div className={cn(
+        "absolute inset-2 top-8 rounded-lg overflow-hidden border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,.6)]",
+        "transition-transform duration-500 group-hover:scale-[1.03]"
+      )}>
+        <Image
+          src={src || fallback}
+          alt={alt}
+          fill
+          className="object-cover"
+        />
+      </div>
 
       {/* Shine */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,rgba(255,255,255,.14)_0%,transparent_20%,transparent_80%,rgba(255,255,255,.1)_100%)] opacity-[.15] group-hover:opacity-30 transition-opacity" />
