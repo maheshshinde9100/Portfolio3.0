@@ -239,8 +239,8 @@ export const allProjects: Project[] = [
     category: 'client',
     tech: ['MERN Stack', 'Redux Toolkit', 'Tailwind CSS', 'Redis'],
     github: '',
-    demo: null,
-    image: '/thumbnails/sanjivani-blood-bank-thumbnail.png',
+    demo: 'https://www.sanjivanibloodbank.org/',
+    image: '/thumbnails/sanjivani-blood-bank-thumbnail1.png',
     date: '2025-06',
   },
   {
