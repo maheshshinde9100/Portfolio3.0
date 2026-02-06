@@ -225,7 +225,7 @@ export default function Portfolio() {
               <div className="absolute inset-0 rounded-full p-1">
                 <div className="w-full h-full rounded-full bg-black/70 backdrop-blur-xl p-1">
                   <Image
-                    src="/profile.png"
+                    src="/profile.jpg"
                     alt="Mahesh Shinde profile photo"
                     width={176}
                     height={176}
