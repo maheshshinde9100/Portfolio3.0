@@ -15,6 +15,42 @@ export const allProjects: Project[] = [
     date: '2024-02',
   },
   {
+    id: 'shellreq',
+    title: 'ShellReq',
+    description:
+      'ShellReq is a Node.js-based CLI/API request utility developed by Mahesh Shinde for testing and interacting with REST APIs directly from the terminal. It supports HTTP methods like GET, POST, PUT, and DELETE with custom headers, JSON payloads, and verbose output modes.',
+    category: 'open-source',
+    tech: ['Node.js', 'TypeScript', 'npm'],
+    github: 'https://github.com/maheshshinde9100/ShellReq',
+    demo: 'https://www.npmjs.com/package/shellreq',
+    image: '/thumbnails/shellreq-npm-package.png',
+    date: '2026-02',
+  },
+  {
+    id: 'shellreq-vscode',
+    title: 'ShellReq API Client',
+    description:
+      'A native, lightweight, and high-performance API testing client integrated directly into the VS Code sidebar. Features standard HTTP methods, structured grid editors for headers/parameters, persistent request collections, and real-time response analysis with JSON pretty-printing.',
+    category: 'open-source',
+    tech: ['VS Code Extension', 'TypeScript', 'REST API', 'Node.js'],
+    github: 'https://github.com/maheshshinde9100/ShellReq',
+    demo: 'https://marketplace.visualstudio.com/items?itemName=maheshshinde9100.shellreq-api-client',
+    image: '/thumbnails/shellreq-api-client-thumbnail.png',
+    date: '2026-03',
+  },
+  {
+    id: 'ms-ui-kit',
+    title: 'MS-UI-KIT',
+    description:
+      'MS-UI-KIT is a reusable React UI component library created and maintained by Mahesh Shinde. The library provides customizable UI components such as Buttons, Cards, Modals, Inputs, and more using React, Tailwind CSS, and Vite. It is maintained under GSSoC’26.',
+    category: 'open-source',
+    tech: ['React.js', 'Tailwind CSS', 'Vite', 'npm'],
+    github: 'https://github.com/maheshshinde9100/MS-UI-KIT',
+    demo: 'https://www.npmjs.com/package/ms-ui-kit',
+    image: '/thumbnails/ms-ui-kit-thumbnail.png',
+    date: '2026-01',
+  },
+  {
     id: 'safe-pilot',
     title: 'SafePilot',
     description:
