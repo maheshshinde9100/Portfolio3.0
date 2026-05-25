@@ -179,6 +179,10 @@ html {
   opacity: 0;
 }
 
+.hero-profile {
+  isolation: isolate;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

@@ -3,9 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ChevronDown, Download, Code2 } from 'lucide-react'
-import Image from 'next/image'
+import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, Code2 } from 'lucide-react'
+import HeroSection from '@/components/hero-section'
 import { allProjects } from '@/data/projects'
 import BackgroundFX from '@/components/background-fx'
 import Reveal from '@/components/reveal'
@@ -84,99 +83,10 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      <section id="hero" className="pt-32 md:pt-35 min-h-screen flex items-center justify-center relative">
-        <div className="text-center z-10 px-6">
-          <div className="hero-enter mb-10">
-            <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 rounded-full pointer-events-none z-10 motion-safe:opacity-90 motion-reduce:opacity-70"
-                style={{
-                  background:
-                    'conic-gradient(from 0deg, rgba(34,211,238,.85), rgba(167,139,250,.85), rgba(236,72,153,.85), rgba(34,211,238,.85))',
-                  WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0)',
-                  mask: 'radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0)',
-                }}
-              />
-              <div className="absolute inset-0 rounded-full p-1 bg-black/80">
-                <Image
-                  src="/profile.jpg"
-                  alt="Mahesh Shinde profile photo"
-                  width={176}
-                  height={176}
-                  priority
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Mahesh Shinde
-              </span>
-            </h1>
-            <p className="text-lg md:text-2xl text-white/80">
-              Full-Stack Developer • Android Developer • Java Developer
-            </p>
-          </div>
-
-          <div className="hero-enter-delay-1 flex flex-wrap justify-center gap-4 mb-10">
-            {['ReactJS', 'Java', 'Spring Boot', 'Android', 'Google Cloud'].map((chip) => (
-              <Badge
-                key={chip}
-                variant="outline"
-                className="border-white/20 text-white/90 bg-white/5 hover:bg-white/10 transition-colors"
-              >
-                {chip}
-              </Badge>
-            ))}
-          </div>
-
-          <div className="hero-enter-delay-2 flex flex-wrap justify-center gap-4 mb-12">
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-3 rounded-full"
-            >
-              Get In Touch
-            </Button>
-            <Button
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white hover:text-black px-8 py-3 rounded-full"
-              onClick={() =>
-                window.open(
-                  'https://drive.google.com/file/d/190ngRUJrSDnAvsPEN3Jy_t-JiI8POi8W/view?usp=drive_link',
-                  '_blank'
-                )
-              }
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Resume
-            </Button>
-          </div>
-
-          <div className="hero-enter-delay-2 flex justify-center gap-6">
-            {[
-              { Icon: Github, url: 'https://github.com/maheshshinde9100' },
-              { Icon: Linkedin, url: 'https://www.linkedin.com/in/maheshshinde9100' },
-              { Icon: Mail, url: 'mailto:contact.shindemahesh2112@gmail.com' },
-            ].map(({ Icon, url }, i) => (
-              <a
-                key={i}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center hover:bg-white/20 hover:scale-105 transition-transform"
-              >
-                <Icon className="w-6 h-6" />
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 motion-safe:animate-bounce motion-reduce:animate-none">
-          <ChevronDown className="w-8 h-8 text-white/50" />
-        </div>
-      </section>
+      <HeroSection
+        onContact={() => scrollToSection('contact')}
+        onScrollDown={() => scrollToSection('about')}
+      />
 
       <section id="about" className="perf-section scroll-mt-32 md:scroll-mt-40 py-20 relative">
         <div className="container mx-auto px-6">
