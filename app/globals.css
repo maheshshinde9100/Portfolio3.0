@@ -134,6 +134,51 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Off-screen sections skip layout/paint work until near viewport */
+.perf-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter {
+  animation: hero-fade-in 0.7s ease-out forwards;
+}
+
+.hero-enter-delay-1 {
+  animation: hero-fade-in 0.7s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.hero-enter-delay-2 {
+  animation: hero-fade-in 0.7s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

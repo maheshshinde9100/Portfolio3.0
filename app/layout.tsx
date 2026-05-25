@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import ClientOnly from '@/components/client-only'
+import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: 'mahesh.dev',
   description: 'Mahesh Shinde | Portfolio',
   generator: 'mahesh.dev',
-  
 }
 
 export default function RootLayout({
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <style>{`
 html {
@@ -28,7 +29,12 @@ html {
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <ClientOnly>
+          <Toaster closeButton position="bottom-right" richColors theme="dark" />
+        </ClientOnly>
+      </body>
     </html>
   )
 }

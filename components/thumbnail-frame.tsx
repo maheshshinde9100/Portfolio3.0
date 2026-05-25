@@ -3,32 +3,33 @@
 import type * as React from "react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-
 type Props = {
   src?: string
   alt?: string
   className?: string
   children?: React.ReactNode
+  priority?: boolean
 }
 
-export default function ThumbnailFrame({ src, alt = "Project thumbnail", className, children }: Props) {
+export default function ThumbnailFrame({
+  src,
+  alt = "Project thumbnail",
+  className,
+  children,
+  priority = false,
+}: Props) {
   const fallback = "/placeholder.svg?height=720&width=1280"
+  const imageSrc = src || fallback
 
   return (
     <div
       className={cn(
-        "relative aspect-video rounded-xl overflow-hidden group",
-        "bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(34,211,238,.12),transparent_60%),radial-gradient(1000px_500px_at_110%_10%,rgba(167,139,250,.12),transparent_55%),linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.3))]",
-        "ring-1 ring-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,.6),inset_0_0_0_1px_rgba(255,255,255,.04)]",
-        "transition-transform duration-300 ease-out will-change-transform",
-        "hover:-translate-y-0.5",
+        "relative aspect-video rounded-xl overflow-hidden",
+        "bg-[linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.25))]",
+        "ring-1 ring-white/10",
         className,
       )}
     >
-      {/* Subtle glow on hover */}
-      <div className="pointer-events-none absolute -inset-2 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-300 bg-[conic-gradient(from_0deg,rgba(34,211,238,.15),rgba(167,139,250,.12),rgba(236,72,153,.12),rgba(34,211,238,.15))]" />
-
-      {/* Browser-like chrome */}
       <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-white/10 to-transparent border-b border-white/10">
         <div className="absolute left-3 top-1/2 -translate-y-1/2 flex gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-red-400/70 border border-white/20" />
@@ -37,23 +38,19 @@ export default function ThumbnailFrame({ src, alt = "Project thumbnail", classNa
         </div>
       </div>
 
-      {/* Image */}
-      <div className={cn(
-        "absolute inset-2 top-8 rounded-lg overflow-hidden border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,.6)]",
-        "transition-transform duration-500 group-hover:scale-[1.03]"
-      )}>
+      <div className="absolute inset-2 top-8 rounded-lg overflow-hidden border border-white/10">
         <Image
-          src={src || fallback}
+          src={imageSrc}
           alt={alt}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
+          loading={priority ? undefined : "lazy"}
+          priority={priority}
+          unoptimized={false}
         />
       </div>
 
-      {/* Shine */}
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,rgba(255,255,255,.14)_0%,transparent_20%,transparent_80%,rgba(255,255,255,.1)_100%)] opacity-[.15] group-hover:opacity-30 transition-opacity" />
-
-      {/* Slot for badges/overlays */}
       <div className="absolute inset-0">{children}</div>
     </div>
   )
