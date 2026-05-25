@@ -1,6 +1,7 @@
 import type { Project } from '@/types/project'
+import { getProjectThumbnail } from '@/data/cloudinary-thumbnails'
 
-export const allProjects: Project[] = [
+const projects: Project[] = [
   // personal projects
   {
     id: 'mentee-connect',
@@ -74,30 +75,29 @@ export const allProjects: Project[] = [
     image: '/thumbnails/safepilot-thumbnail.png',
     date: '2025-09',
   },
-  // { //  under working
-  //   id: 'maitri-connect',
-  //   title: 'MaitriConnect',
-  //   description:
-  //     'MaitriConnect is a microservices-based real-time communication platform built with Spring Boot and React, featuring Spring Cloud, Netflix Eureka service discovery, MongoDB, WebSockets, and multipart file support. It enables real-time chat, seamless file sharing, and profile management with image updates, with ongoing development of a video and voice calling service.',
-  //   category: 'personal',
-  //   tech: [
-  //     'Spring Boot',
-  //     'Microservices Architecture',
-  //     'Spring Cloud',
-  //     'Netflix Eureka',
-  //     'React',
-  //     'TailwindCSS',
-  //     'MongoDB',
-  //     'WebSockets',
-  //     'Multipart File Handling',
-  //     'Java',
-  //     // 'Video and Voice Call'
-  //   ],
-  //   github: 'https://github.com/maheshshinde9100/MaitriConnect',
-  //   demo: null,
-  //   image: '/thumbnails/maitri-connect-thumbnail.png',
-  //   date: '2025-10',
-  // },
+  {
+    id: 'maitri-connect',
+    title: 'MaitriConnect',
+    description:
+      'MaitriConnect is a microservices-based real-time communication platform built with Spring Boot and React, featuring Spring Cloud, Netflix Eureka service discovery, MongoDB, WebSockets, and multipart file support. It enables real-time chat, seamless file sharing, and profile management with image updates, with ongoing development of a video and voice calling service.',
+    category: 'personal',
+    tech: [
+      'Spring Boot',
+      'Microservices Architecture',
+      'Spring Cloud',
+      'Netflix Eureka',
+      'React',
+      'TailwindCSS',
+      'MongoDB',
+      'WebSockets',
+      'Multipart File Handling',
+      'Java',
+    ],
+    github: 'https://github.com/maheshshinde9100/MaitriConnect',
+    demo: null,
+    image: '/thumbnails/maitri-connect-thumbnail.png',
+    date: '2025-10',
+  },
 
   {
     id: 'codecomplexity-ai',
@@ -316,3 +316,8 @@ export const allProjects: Project[] = [
   },
 
 ]
+
+export const allProjects: Project[] = projects.map((p) => ({
+  ...p,
+  image: getProjectThumbnail(p.id, p.image),
+}))
