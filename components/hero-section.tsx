@@ -19,7 +19,7 @@ const socialLinks = [
 ] as const
 
 const RESUME_URL =
-  'https://drive.google.com/file/d/1gC9ONaGn9ffS48PtPGaskc9JJ8rOWQoM/view?usp=sharing'
+  'https://drive.google.com/file/d/1PpuquTY-7sI5yoY53pmoPAbmjhozfLCa/view?usp=sharing'
 
 export default function HeroSection({ onContact, onScrollDown }: HeroSectionProps) {
   return (
