@@ -72,7 +72,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/maheshshinde9100/SafePilot',
     demo: null,
-    image: '/thumbnails/safepilot-thumbnail.png',
+    image: '/thumbnails/hardware-model.webp',
     date: '2025-09',
   },
   {
