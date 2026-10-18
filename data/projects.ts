@@ -72,7 +72,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/maheshshinde9100/SafePilot',
     demo: null,
-    image: '/thumbnails/safepilot-thumbnail.png',
+    image: '/thumbnails/hardware-model.webp',
     date: '2025-09',
   },
   {
@@ -180,8 +180,8 @@ const projects: Project[] = [
     category: 'personal',
     tech: ['ReactJS', 'ExpressJs', 'NodeJs', 'MongoDB'],
     github: 'https://github.com/maheshshinde9100/TaskTracker',
-    demo: null,
-    image: '/thumbnails/insta-clone-1-thumbnail.png',
+    demo: 'https://tasktracker-web.netlify.app/',
+    image: '/thumbnails/tasktracker-thumbnail.jpg',
     date: '2023-10',
   },
 
