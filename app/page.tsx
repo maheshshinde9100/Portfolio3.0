@@ -1,46 +1,49 @@
 'use client'
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { ArrowDownRight, ArrowUpRight, Code2, Download, Github, Linkedin, Mail, MapPin, Menu, X, Terminal, Sparkles } from 'lucide-react'
-import { useMemo, useState } from 'react'
-import { allProjects } from '@/data/projects'
-
-const links = [['About', 'about'], ['Selected work', 'work'], ['Experience', 'experience'], ['Contact', 'contact']]
-const skills = ['Java', 'Spring Boot', 'React', 'TypeScript', 'MongoDB', 'Node.js', 'Spring Security', 'Docker', 'Redis', 'Google Cloud']
-const experiences = [
-  { date: '2025', role: 'Data Science Intern', company: 'Celebal Technologies (CEI)', detail: 'Applied data science and machine-learning concepts through an industry-focused internship program.' },
-  { date: 'Dec 2025 — now', role: 'Backend Developer Intern', company: 'GolokaIT', detail: 'Building full-stack products with Spring Boot, React, and Spring Security.' },
-  { date: 'Jun 2023', role: 'Android Application Development', company: 'ATJOIN Pvt. Ltd', detail: 'Developed, tested, and debugged Android applications with Java and the Android SDK.' },
-  { date: 'Apr 2023', role: 'Web Development', company: 'CodeClause', detail: 'Worked across frontend and backend delivery, collaboration, and project workflows.' },
-]
+import { useState } from 'react'
+import ClickSpark from '@/components/ClickSpark'
+import Background from '@/components/portfolio/Background'
+import Sidebar from '@/components/portfolio/Sidebar'
+import Stage from '@/components/portfolio/Stage'
+import AboutSection from '@/components/portfolio/sections/AboutSection'
+import WorkSection from '@/components/portfolio/sections/WorkSection'
+import ExperienceSection from '@/components/portfolio/sections/ExperienceSection'
+import ToolkitSection from '@/components/portfolio/sections/ToolkitSection'
+import AchievementsSection from '@/components/portfolio/sections/AchievementsSection'
+import CertificationsSection from '@/components/portfolio/sections/CertificationsSection'
+import ContactSection from '@/components/portfolio/sections/ContactSection'
+import type { SectionId } from '@/components/portfolio/sections-config'
 
 export default function Portfolio() {
-  const [open, setOpen] = useState(false)
-  const [category, setCategory] = useState('All')
-  const [page, setPage] = useState(1)
-  const categories = ['All', 'Client', 'VSCode Extensions', 'NPM Packages', 'Hackathon', 'Open Source']
-  const projects = useMemo(() => [...allProjects].sort((a, b) => (b.date || '').localeCompare(a.date || '')), [])
-  const filteredProjects = projects.filter(project => category === 'All' || (category === 'Client' && project.category === 'client') || (category === 'Hackathon' && project.category === 'hackathon') || (category === 'Open Source' && project.category === 'open-source') || (category === 'VSCode Extensions' && project.id === 'shellreq-vscode') || (category === 'NPM Packages' && ['shellreq', 'ms-ui-kit'].includes(project.id || '')))
-  const perPage = 6
-  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / perPage))
-  const shownProjects = filteredProjects.slice((page - 1) * perPage, page * perPage)
-  const chooseCategory = (name: string) => { setCategory(name); setPage(1) }
-  return <main>
-    <header className="site-header">
-      <a className="brand" href="#top" aria-label="Mahesh Shinde home"><span>MS</span><i>Mahesh Shinde</i></a>
-      <nav className={open ? 'nav open' : 'nav'}>{links.map(([label, id]) => <a onClick={() => setOpen(false)} key={id} href={`#${id}`}>{label}</a>)}<a className="nav-cta" href="mailto:contact.shindemahesh2112@gmail.com">Let&apos;s talk <ArrowUpRight size={14} /></a></nav>
-      <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button>
-    </header>
-    <section id="top" className="hero section">
-      <div className="hero-copy"><motion.p initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} className="eyebrow"><span /> Available for thoughtful work</motion.p><motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{delay:.1,duration:.65}}>I build digital<br /><em>systems with</em><br />real impact.</motion.h1><motion.p initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{delay:.2,duration:.65}} className="hero-intro">Full-stack developer based in Maharashtra, India — turning complex requirements into reliable, human-centred web products.</motion.p><motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.35}} className="hero-actions"><a className="button button-dark" href="#work">Explore my work <ArrowDownRight size={18} /></a><a className="text-link" href="https://drive.google.com/file/d/190ngRUJrSDnAvsPEN3Jy_t-JiI8POi8W/view?usp=drive_link" target="_blank" rel="noreferrer"><Download size={16} /> Resume</a></motion.div></div>
-      <motion.div initial={{opacity:0,scale:.9,rotateY:-10}} animate={{opacity:1,scale:1,rotateY:0}} transition={{duration:.9}} className="hero-art tech-stage"><div className="grid-plane"/><div className="cube-scene"><div className="cube"><div className="cube-face front"><Terminal size={32}/><span>BUILD</span></div><div className="cube-face back">MS</div><div className="cube-face right">JAVA</div><div className="cube-face left">REACT</div><div className="cube-face top"><Sparkles size={25}/></div><div className="cube-face bottom">2026</div></div></div><div className="terminal-card"><div><i/><i/><i/></div><p><span>$</span> craft --with-intent</p><p className="typing">building_</p></div><div className="portrait-chip"><Image src="/profile.jpg" alt="Mahesh Shinde" fill sizes="100px" /></div><div className="orbit orbit-one">JAVA · SPRING · REACT ·</div><div className="orbit orbit-two">BUILD WITH INTENTION ·</div><div className="art-note"><span>01</span><b>Engineer<br />&amp; maker</b></div></motion.div><div className="hero-footer"><span>Scroll to explore</span><span>2026 / PORTFOLIO</span></div>
-    </section>
-    <section id="about" className="section about"><p className="section-label">01 / About</p><div className="about-body"><h2>Crafting useful things,<br />with care for the <em>details.</em></h2><div><p>I&apos;m Mahesh — a Java and full-stack developer with a bias for clean architecture, calm interfaces, and software that earns its place in someone&apos;s day.</p><p>My work stretches from Spring Boot backends and secure APIs to React experiences, Android applications, cloud deployment, and IoT systems.</p><a href="mailto:contact.shindemahesh2112@gmail.com" className="text-link">More about me <ArrowUpRight size={16} /></a></div></div><div className="proof-grid"><div><strong>298+</strong><span>Problems solved</span></div><div><strong>28</strong><span>Google Cloud badges</span></div><div><strong>10+</strong><span>Shipped projects</span></div><div><strong>Top 3</strong><span>Hackathon finish</span></div></div></section>
-    <section className="marquee" aria-label="Technical toolkit"><div>{[...skills,...skills].map((skill,index) => <span key={`${skill}-${index}`}>{skill}<b>✦</b></span>)}</div></section>
-    <section id="work" className="section work"><div className="section-heading"><p className="section-label">02 / Project archive</p><h2>Built to solve.<br /><em>Designed to last.</em></h2><p>A complete collection of client work, developer tools, open-source packages, hackathon builds, and products.</p></div><div className="project-toolbar"><div>{categories.map(name => <button className={category === name ? 'active' : ''} onClick={() => chooseCategory(name)} key={name}>{name}</button>)}</div><p>{filteredProjects.length} projects</p></div><div className="project-list">{shownProjects.map((project,index) => <motion.article initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} whileHover={{y:-5}} key={project.id} className="project-card"><div className="project-image"><Image src={project.image || '/placeholder.jpg'} alt="" fill sizes="(max-width: 700px) 100vw, 50vw" /><span>{String((page-1)*perPage+index+1).padStart(2,'0')}</span>{project.award && <b className="award">{project.award}</b>}<b className="project-badge">{project.category === 'client' ? 'Client delivery' : project.id === 'shellreq-vscode' ? 'VS Code extension' : ['shellreq','ms-ui-kit'].includes(project.id || '') ? 'NPM package' : project.category === 'hackathon' ? 'Hackathon' : 'Project'}</b></div><div className="project-info"><div><p>{project.category} / {project.date?.slice(0,4) || 'Recent'}</p><h3>{project.title}</h3></div><a href={project.demo || project.github || '#work'} target="_blank" rel="noreferrer" aria-label={`View ${project.title}`}><ArrowUpRight /></a></div><p className="project-description">{project.description}</p><div className="tags">{project.tech.slice(0,4).map(tag => <span key={tag}>{tag}</span>)}</div></motion.article>)}</div><div className="pagination">{Array.from({length:totalPages},(_,index) => <button onClick={() => { setPage(index+1); document.getElementById('work')?.scrollIntoView({behavior:'smooth',block:'start'}) }} className={page === index+1 ? 'active' : ''} key={index}>{String(index+1).padStart(2,'0')}</button>)}</div></section>
-    <section id="experience" className="section experience"><p className="section-label">03 / Experience</p><h2>A steady focus on<br /><em>getting better.</em></h2><div className="timeline">{experiences.map(item => <article key={item.company}><p>{item.date}</p><div><h3>{item.role}</h3><h4>{item.company}</h4><span>{item.detail}</span></div></article>)}</div></section>
-    <section id="contact" className="contact section"><p className="section-label">04 / Contact</p><h2>Have a thoughtful<br />idea in mind?</h2><a className="contact-email" href="mailto:contact.shindemahesh2112@gmail.com">Let&apos;s make it real <ArrowUpRight /></a><div className="contact-bottom"><p><MapPin size={15} /> Yeola, Maharashtra, India</p><div><a href="https://github.com/maheshshinde9100" target="_blank" rel="noreferrer"><Github size={18} /> GitHub</a><a href="https://www.linkedin.com/in/maheshshinde9100" target="_blank" rel="noreferrer"><Linkedin size={18} /> LinkedIn</a><a href="mailto:contact.shindemahesh2112@gmail.com"><Mail size={18} /> Email</a></div></div></section>
-    <footer><span>© {new Date().getFullYear()} Mahesh Shinde</span><span>Designed &amp; built with intent <Code2 size={14} /></span></footer>
-  </main>
+  const [active, setActive] = useState<SectionId>('about')
+
+  return (
+    <ClickSpark
+      sparkColor={['#7065f0', '#9fa3fc', '#ebebf4']}
+      sparkCount={8}
+      sparkRadius={22}
+      sparkSize={8}
+      duration={520}
+      easing="ease-out"
+      shape="streak"
+      glow={0.6}
+      className="h-[100dvh] w-full"
+    >
+      <Background />
+      <div className="flex h-[100dvh] w-full flex-col md:flex-row">
+        <Sidebar active={active} onSelect={setActive} />
+        <main className="relative min-h-0 flex-1">
+          <Stage section={active}>
+            {active === 'about' && <AboutSection />}
+            {active === 'work' && <WorkSection />}
+            {active === 'experience' && <ExperienceSection />}
+            {active === 'toolkit' && <ToolkitSection />}
+            {active === 'achievements' && <AchievementsSection />}
+            {active === 'certifications' && <CertificationsSection />}
+            {active === 'contact' && <ContactSection />}
+          </Stage>
+        </main>
+      </div>
+    </ClickSpark>
+  )
 }
