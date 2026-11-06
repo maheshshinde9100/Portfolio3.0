@@ -1,31 +1,19 @@
 'use client'
 
-import { useTheme } from 'next-themes'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { ArrowUpRight, Download, MapPin } from 'lucide-react'
-import BlurText from '@/components/BlurText'
-import CountUp from '@/components/CountUp'
-import GlareHover from '@/components/GlareHover'
-import Magnet from '@/components/Magnet'
-import ProfileCard from '@/components/ProfileCard'
 import SplitText from '@/components/SplitText'
-import StarBorder from '@/components/StarBorder'
 import { profile, stats } from '@/data/profile'
 
-const floatingChips = [
-  { label: 'Spring Boot', className: '-left-6 top-10' },
-  { label: 'React', className: '-right-4 top-28' },
-  { label: 'PostgreSQL', className: 'bottom-16 -left-8' },
-]
+const EASE = [0.22, 1, 0.36, 1] as const
 
 export default function AboutSection() {
-  const { resolvedTheme } = useTheme()
-  const dark = resolvedTheme !== 'light'
-
   return (
-    <section className="scene-3d mx-auto flex min-h-full w-full max-w-[1200px] flex-col justify-center px-6 py-10 md:px-10 md:py-14">
-      <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+    <section className="mx-auto flex min-h-full w-full max-w-[1160px] flex-col justify-center px-6 py-10 md:px-10 md:py-14">
+      <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <div>
-          <p className="eyebrow mb-4">01 / About</p>
+          <p className="eyebrow mb-5">01 / About</p>
 
           <SplitText
             text={profile.tagline}
@@ -33,115 +21,97 @@ export default function AboutSection() {
             trigger="load"
             effect="rise"
             splitType="words"
-            delay={70}
-            duration={0.8}
+            delay={60}
+            duration={0.75}
             textAlign="left"
-            className="max-w-[620px] pb-1 text-4xl font-semibold leading-[1.08] tracking-[-0.035em] sm:text-5xl xl:text-6xl"
+            className="max-w-[640px] pb-1 text-4xl font-semibold leading-[1.12] tracking-[-0.03em] sm:text-5xl xl:text-[3.4rem]"
           />
 
-          <div className="mt-5 max-w-[560px]">
-            <BlurText
-              text={profile.intro}
-              animateBy="words"
-              delay={22}
-              direction="bottom"
-              trigger="load"
-              className="text-base leading-7 text-muted"
-            />
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE, delay: 0.28 }}
+            className="mt-6 max-w-[560px] text-[15px] leading-7 text-muted"
+          >
+            {profile.intro}
+          </motion.p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-4">
-            <Magnet padding={14} magnetStrength={8} tilt={6}>
-              <StarBorder
-                as="a"
-                href={`mailto:${profile.email}`}
-                theme={dark ? 'dark' : 'light'}
-                color={dark ? '#7065f0' : '#4f43d6'}
-                trailColor={dark ? '#9fa3fc' : '#7065f0'}
-                duration={5}
-                thickness={1.4}
-                radius={12}
-                glow={0.7}
-                sparkle
-                className="!px-6 !py-3 text-sm font-semibold"
-              >
-                <span className="inline-flex items-center gap-2">
-                  Let&apos;s talk <ArrowUpRight className="h-4 w-4" />
-                </span>
-              </StarBorder>
-            </Magnet>
-
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE, delay: 0.36 }}
+            className="mt-8 flex flex-wrap items-center gap-3"
+          >
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-opacity duration-300 hover:opacity-90 active:translate-y-px"
+            >
+              Let&apos;s talk <ArrowUpRight className="h-4 w-4" />
+            </a>
             <a
               href={profile.resume}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-3 text-sm font-medium text-muted transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-accent/60 hover:text-ink active:translate-y-px"
+              className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 text-sm font-medium text-muted transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-accent/60 hover:text-ink active:translate-y-px"
             >
               <Download className="h-4 w-4" /> Resume
             </a>
-
             <span className="inline-flex items-center gap-2 text-sm text-muted">
               <MapPin className="h-4 w-4 text-accent" /> {profile.location}
             </span>
-          </div>
+          </motion.div>
 
-          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {stats.map((stat, index) => (
-              <GlareHover
-                key={stat.label}
-                width="100%"
-                height="100%"
-                background="color-mix(in srgb, var(--surface) 88%, transparent)"
-                borderColor="var(--line)"
-                borderRadius="14px"
-                glareColor={dark ? '#9fa3fc' : '#7065f0'}
-                glareOpacity={0.3}
-                glareAngle={-30}
-                variant="streak"
-                intro={index === 0}
-                transitionDuration={700}
-              >
-                <div className="w-full px-4 py-4 text-left">
-                  <p className="font-mono text-2xl font-semibold text-accent">
-                    <CountUp to={stat.value} duration={1.4} trigger="load" />
+          <motion.dl
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE, delay: 0.44 }}
+            className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-line pt-7 sm:grid-cols-4"
+          >
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <dt className="sr-only">{stat.label}</dt>
+                <dd>
+                  <span className="block text-2xl font-semibold tabular-nums tracking-[-0.02em] text-ink">
+                    {stat.value}
                     {stat.suffix}
-                  </p>
-                  <p className="mt-1 text-xs leading-4 text-muted">{stat.label}</p>
-                </div>
-              </GlareHover>
+                  </span>
+                  <span className="mt-1 block text-xs leading-4 text-muted">{stat.label}</span>
+                </dd>
+              </div>
             ))}
+          </motion.dl>
+        </div>
+
+        <motion.figure
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: EASE, delay: 0.2 }}
+          className="mx-auto w-full max-w-[340px] overflow-hidden rounded-2xl border border-line bg-surface"
+        >
+          <div className="relative aspect-[4/5] bg-surface-2">
+            <Image
+              src="/profile.jpg"
+              alt={profile.name}
+              fill
+              priority
+              sizes="(max-width: 1024px) 340px, 340px"
+              className="object-cover"
+            />
           </div>
-        </div>
-
-        <div className="scene-3d relative mx-auto flex w-full max-w-[360px] items-center justify-center pt-6 lg:pt-0">
-          {floatingChips.map((chip) => (
-            <span
-              key={chip.label}
-              className={`animate-float pointer-events-none absolute z-10 hidden rounded-lg border border-line bg-surface/85 px-3 py-1.5 font-mono text-[11px] text-accent-2 shadow-[0_18px_40px_-26px_var(--glow)] backdrop-blur-md lg:block ${chip.className}`}
-            >
-              {chip.label}
+          <figcaption className="flex items-center justify-between gap-3 border-t border-line px-4 py-3.5">
+            <div className="leading-tight">
+              <p className="text-[13px] font-medium text-ink">{profile.name}</p>
+              <p className="text-[11px] text-muted">{profile.location}</p>
+            </div>
+            <span className="inline-flex items-center gap-2 text-[11px] text-muted">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              </span>
+              {profile.status}
             </span>
-          ))}
-
-          <ProfileCard
-            avatarUrl="/profile.jpg"
-            name={profile.name}
-            title={profile.role}
-            handle="maheshshinde9100"
-            status={profile.status}
-            statusColor="#7065f0"
-            contactText="Get in touch"
-            onContactClick={() => {
-              window.location.href = `mailto:${profile.email}`
-            }}
-            theme={dark ? 'dark' : 'light'}
-            backdropColor={dark ? '#191919' : '#f2f2f7'}
-            radius={18}
-            enableTilt
-            tiltStrength={6}
-            parallax={2}
-          />
-        </div>
+          </figcaption>
+        </motion.figure>
       </div>
     </section>
   )

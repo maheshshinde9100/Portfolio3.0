@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Trophy } from 'lucide-react'
+import { ArrowUpRight, Lock } from 'lucide-react'
 import { allProjects } from '@/data/projects'
 import { cn } from '@/lib/utils'
 import type { ProjectCategory } from '@/types/project'
@@ -58,121 +58,121 @@ export default function WorkSection() {
   const shown = filter === 'all' ? projects : projects.filter((p) => p.category === filter)
 
   return (
-    <section className="mx-auto flex min-h-full w-full max-w-[1240px] flex-col px-6 py-10 md:px-10 md:py-12">
-      <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="eyebrow mb-3">02 / Work</p>
-          <h2 className="max-w-[680px] text-3xl font-semibold leading-[1.06] tracking-[-0.03em] sm:text-4xl xl:text-5xl">
-            Built to solve. Designed to last.
-          </h2>
-          <p className="mt-3 max-w-[560px] text-sm text-muted md:text-base">
-            Client deliveries, developer tools, open source packages, and hackathon builds across the
-            stack.
-          </p>
-        </div>
-        <div className="text-right">
-          <p className="font-mono text-3xl font-semibold text-accent">
-            {String(projects.length).padStart(2, '0')}
-          </p>
-          <p className="text-xs text-muted">projects shipped</p>
-        </div>
+    <section className="mx-auto flex min-h-full w-full max-w-[1280px] flex-col px-6 py-10 md:px-10 md:py-12">
+      <header className="mb-6">
+        <p className="eyebrow mb-4">02 / Work</p>
+        <h2 className="max-w-[620px] text-3xl font-semibold leading-[1.12] tracking-[-0.03em] sm:text-4xl xl:text-[2.9rem]">
+          Built to solve. Designed to last.
+        </h2>
+        <p className="mt-4 max-w-[560px] text-[15px] leading-7 text-muted">
+          Client deliveries, developer tools, open source packages, and hackathon builds across the
+          stack.
+        </p>
       </header>
 
-      <div className="sticky top-0 z-10 mb-6 -mx-6 flex flex-wrap items-center gap-2 bg-bg/80 px-6 py-2 backdrop-blur-md md:-mx-10 md:px-10">
-        {filters.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            onClick={() => setFilter(item.id)}
-            aria-pressed={filter === item.id}
-            className={cn(
-              'relative rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
-              filter === item.id
-                ? 'border-accent/50 bg-accent-soft text-ink'
-                : 'border-line text-muted hover:border-accent/40 hover:text-ink',
-            )}
-          >
-            {item.label}
-            <span className="ml-1.5 font-mono text-[10px] text-muted">{counts[item.id]}</span>
-          </button>
-        ))}
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {shown.map((project, index) => {
-          const href = project.demo || project.github || ''
-          const external = href.length > 0
+      <div className="sticky top-0 z-10 -mx-6 mb-5 flex flex-wrap items-center gap-x-7 border-b border-line bg-bg/85 px-6 backdrop-blur-md md:-mx-10 md:px-10">
+        {filters.map((item) => {
+          const active = filter === item.id
           return (
-            <motion.a
-              key={project.id}
-              href={external ? href : undefined}
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noreferrer' : undefined}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: EASE, delay: Math.min(index, 8) * 0.04 }}
-              className="group relative isolate flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/80 transition-[transform,border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-accent/45"
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => setFilter(item.id)}
+              aria-pressed={active}
+              className={cn(
+                'relative py-3 text-[13px] transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
+                active ? 'font-medium text-ink' : 'text-muted hover:text-ink',
+              )}
             >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                style={{
-                  background:
-                    'radial-gradient(120% 120% at 50% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 65%)',
-                }}
-              />
-
-              <div className="relative h-36 overflow-hidden border-b border-line">
-                <Image
-                  src={project.image || '/placeholder.jpg'}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 360px"
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+              {item.label}
+              <span className="ml-1.5 text-[11px] tabular-nums text-muted">{counts[item.id]}</span>
+              {active && (
+                <motion.span
+                  layoutId="work-filter"
+                  transition={{ duration: 0.35, ease: EASE }}
+                  className="absolute inset-x-0 bottom-0 h-px bg-accent"
                 />
-                <span className="absolute right-2 top-2 rounded-md border border-line bg-bg/80 px-2 py-0.5 font-mono text-[10px] text-accent backdrop-blur-sm">
-                  {project.date?.slice(0, 4) || 'Recent'}
-                </span>
-                {project.award && (
-                  <span className="absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-md bg-accent px-2 py-0.5 text-[10px] font-semibold text-accent-contrast">
-                    <Trophy className="h-3 w-3" /> {project.award}
-                  </span>
-                )}
-              </div>
-
-              <div className="flex flex-1 flex-col p-4">
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent-2">
-                  {categoryLabel[project.category]}
-                </p>
-                <h3 className="mt-1.5 text-base font-medium tracking-[-0.01em] text-ink">
-                  {project.title}
-                </h3>
-                <p className="mt-2 line-clamp-2 text-[13px] leading-6 text-muted">
-                  {project.description}
-                </p>
-
-                <div className="mt-auto flex items-center justify-between gap-3 pt-4">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech.slice(0, 3).map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-md border border-line px-1.5 py-0.5 text-[10px] text-muted"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-muted transition-colors duration-300 group-hover:border-accent/60 group-hover:text-accent">
-                    <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </div>
-              </div>
-            </motion.a>
+              )}
+            </button>
           )
         })}
       </div>
 
-      {shown.length === 0 && (
+      {shown.length > 0 ? (
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {shown.map((project, index) => {
+            const href = project.demo || project.github || ''
+            const external = href.length > 0
+            const year = project.date?.slice(0, 4) || 'Recent'
+            return (
+              <motion.a
+                key={project.id}
+                href={external ? href : undefined}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noreferrer' : undefined}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: EASE, delay: Math.min(index, 8) * 0.035 }}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/50 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-line-strong hover:bg-surface"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-surface-2">
+                  <Image
+                    src={project.image || '/placeholder.jpg'}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 92vw, (max-width: 1280px) 46vw, 30vw"
+                    className="object-cover object-top transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                  />
+                  <span className="absolute left-3 top-3 rounded-full border border-line bg-bg/80 px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-muted backdrop-blur-sm">
+                    {categoryLabel[project.category]}
+                  </span>
+                  {!external && (
+                    <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-line bg-bg/80 px-2 py-0.5 text-[10px] text-muted backdrop-blur-sm">
+                      <Lock className="h-2.5 w-2.5" /> Private
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="text-[15px] font-medium tracking-[-0.01em] text-ink">
+                      {project.title}
+                    </h3>
+                    <span className="shrink-0 text-[11px] tabular-nums text-muted">{year}</span>
+                  </div>
+
+                  {project.award && (
+                    <span className="mt-2 text-[11px] font-medium text-accent-2">
+                      {project.award}
+                    </span>
+                  )}
+
+                  <p className="mt-2 line-clamp-2 text-[13px] leading-6 text-muted">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-auto flex items-end justify-between gap-3 pt-5">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {project.tech.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-md border border-line px-1.5 py-0.5 text-[10px] text-muted"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.tech.length > 3 && (
+                        <span className="text-[10px] text-muted">+{project.tech.length - 3}</span>
+                      )}
+                    </div>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-muted transition-colors duration-300 group-hover:text-accent" />
+                  </div>
+                </div>
+              </motion.a>
+            )
+          })}
+        </div>
+      ) : (
         <p className="py-16 text-center text-sm text-muted">Nothing here yet.</p>
       )}
     </section>

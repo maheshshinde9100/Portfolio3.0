@@ -2,22 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
-import Magnet from '@/components/Magnet'
 import ThemeToggle from './ThemeToggle'
 import { sections, type SectionId } from './sections-config'
 import { profile } from '@/data/profile'
 import { cn } from '@/lib/utils'
 
 const navEase = [0.22, 1, 0.36, 1] as const
-
-const cubeFaces = [
-  'translateZ(18px)',
-  'rotateY(180deg) translateZ(18px)',
-  'rotateY(90deg) translateZ(18px)',
-  'rotateY(-90deg) translateZ(18px)',
-  'rotateX(90deg) translateZ(18px)',
-  'rotateX(-90deg) translateZ(18px)',
-]
 
 export default function Sidebar({
   active,
@@ -27,68 +17,50 @@ export default function Sidebar({
   onSelect: (id: SectionId) => void
 }) {
   return (
-    <aside className="relative z-20 flex shrink-0 items-center gap-4 border-b border-line bg-surface/60 px-4 py-3 md:h-full md:w-[258px] md:flex-col md:items-stretch md:gap-0 md:border-b-0 md:border-r md:px-5 md:py-6">
-      <div className="flex items-center gap-3 md:mb-8">
-        <div className="scene-3d h-9 w-9 shrink-0">
-          <div className="preserve-3d animate-cube relative h-9 w-9">
-            {cubeFaces.map((transform) => (
-              <span
-                key={transform}
-                style={{ transform }}
-                className="absolute inset-0 grid place-items-center rounded-[3px] border border-accent/45 bg-surface/90 font-mono text-[10px] font-semibold text-accent backface-hidden"
-              >
-                MS
-              </span>
-            ))}
-          </div>
-        </div>
+    <aside className="relative z-20 flex shrink-0 items-center gap-4 border-b border-line bg-surface/50 px-4 py-3 md:h-full md:w-[258px] md:flex-col md:items-stretch md:gap-0 md:border-b-0 md:border-r md:px-5 md:py-6">
+      <div className="flex items-center gap-3 md:mb-9">
+        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[10px] bg-accent text-[12px] font-semibold tracking-[0.02em] text-accent-contrast">
+          {profile.initials}
+        </span>
         <div className="leading-tight">
-          <p className="text-sm font-medium tracking-[-0.01em] text-ink">{profile.name}</p>
+          <p className="text-[13px] font-medium tracking-[-0.01em] text-ink">{profile.name}</p>
           <p className="text-[11px] text-muted">{profile.role}</p>
         </div>
       </div>
 
       <nav
         aria-label="Sections"
-        className="no-scrollbar flex flex-1 items-center gap-1 overflow-x-auto md:min-h-0 md:flex-col md:items-stretch md:gap-1 md:overflow-y-auto md:overflow-x-hidden"
+        className="no-scrollbar flex flex-1 items-center gap-1 overflow-x-auto md:min-h-0 md:flex-col md:items-stretch md:gap-0.5 md:overflow-y-auto md:overflow-x-hidden"
       >
         {sections.map((section) => {
           const isActive = active === section.id
           return (
-            <Magnet
+            <button
               key={section.id}
-              padding={8}
-              magnetStrength={6}
-              tilt={3}
-              className="block w-full"
-              wrapperClassName="block shrink-0 md:w-full"
+              type="button"
+              onClick={() => onSelect(section.id)}
+              aria-current={isActive ? 'page' : undefined}
+              className={cn(
+                'relative isolate flex shrink-0 items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:w-full',
+                isActive ? 'font-medium text-ink' : 'font-normal text-muted hover:text-ink',
+              )}
             >
-              <button
-                type="button"
-                onClick={() => onSelect(section.id)}
-                aria-current={isActive ? 'page' : undefined}
-                className={cn(
-                  'relative isolate flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] font-medium transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
-                  isActive ? 'text-ink' : 'text-muted hover:text-ink',
-                )}
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    transition={{ duration: 0.4, ease: navEase }}
-                    className="absolute inset-0 -z-10 rounded-lg border border-accent/40 bg-accent-soft"
-                  />
-                )}
-                <section.icon
-                  className={cn('h-4 w-4 shrink-0', isActive && 'text-accent')}
-                  strokeWidth={1.75}
+              {isActive && (
+                <motion.span
+                  layoutId="nav-pill"
+                  transition={{ duration: 0.35, ease: navEase }}
+                  className="absolute inset-0 -z-10 rounded-lg bg-accent-soft"
                 />
-                <span className="whitespace-nowrap md:inline">{section.label}</span>
-                <span className="ml-auto hidden font-mono text-[10px] text-muted md:inline">
-                  {section.index}
-                </span>
-              </button>
-            </Magnet>
+              )}
+              <section.icon
+                className={cn('h-4 w-4 shrink-0', isActive ? 'text-accent' : 'text-muted')}
+                strokeWidth={1.75}
+              />
+              <span className="whitespace-nowrap">{section.label}</span>
+              <span className="ml-auto hidden text-[10px] tabular-nums text-muted md:inline">
+                {section.index}
+              </span>
+            </button>
           )
         })}
       </nav>

@@ -1,8 +1,8 @@
 export const profile = {
   name: 'Mahesh Shinde',
   initials: 'MS',
-  role: 'Java and full stack developer',
-  location: 'Yeola, Nashik, Maharashtra, India',
+  role: 'Software developer',
+  location: 'Nashik, Maharashtra, India',
   email: 'contact.shindemahesh2112@gmail.com',
   phone: '+91 9529544681',
   github: 'https://github.com/maheshshinde9100',
@@ -13,11 +13,11 @@ export const profile = {
   resume:
     'https://drive.google.com/file/d/190ngRUJrSDnAvsPEN3Jy_t-JiI8POi8W/view?usp=drive_link',
   status: 'Available for thoughtful work',
-  tagline: 'I build digital systems with real impact.',
+  tagline: 'I build backend systems and the interfaces that sit on top of them.',
   intro:
     'Full stack developer from Maharashtra, India. I turn complex requirements into reliable, human centred web products, from Spring Boot services to React interfaces and IoT hardware.',
   about: [
-    'I am Mahesh, a Java and full stack developer with a bias for clean architecture, calm interfaces, and software that earns its place in someone day.',
+    'I am Mahesh, a Java and full stack developer with a bias for clean architecture, calm interfaces, and software that earns its keep.',
     'My work stretches from Spring Boot backends and secure APIs to React experiences, Android applications, cloud deployment, and IoT systems.',
   ],
 }

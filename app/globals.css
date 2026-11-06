@@ -57,8 +57,8 @@
   --color-accent-3: var(--accent-3);
   --color-accent-soft: var(--accent-soft);
   --color-accent-contrast: var(--accent-contrast);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -75,7 +75,10 @@
     background-color: var(--bg);
     color: var(--ink);
     font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: -0.006em;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     transition: background-color 400ms cubic-bezier(0.22, 1, 0.36, 1),
       color 400ms cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -133,57 +136,26 @@
     backdrop-filter: blur(16px) saturate(140%);
   }
   .eyebrow {
-    font-family: var(--font-mono);
     font-size: 0.6875rem;
-    letter-spacing: 0.22em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent-2);
   }
   .grain {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-  .animate-cube {
-    animation: cube-spin 20s linear infinite;
-  }
-  .animate-float {
-    animation: float-y 7s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-  }
   .animate-drift {
-    animation: drift 26s ease-in-out infinite alternate;
-  }
-  .text-gradient {
-    background: linear-gradient(180deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 62%, transparent) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-}
-
-@keyframes cube-spin {
-  from {
-    transform: rotateX(-20deg) rotateY(0deg);
-  }
-  to {
-    transform: rotateX(-20deg) rotateY(360deg);
-  }
-}
-
-@keyframes float-y {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(0, -12px, 0);
+    animation: drift 34s ease-in-out infinite alternate;
   }
 }
 
 @keyframes drift {
   from {
-    transform: translate3d(-4%, 0, 0) scale(1);
+    transform: translate3d(-2%, 0, 0) scale(1);
   }
   to {
-    transform: translate3d(6%, -5%, 0) scale(1.12);
+    transform: translate3d(3%, -3%, 0) scale(1.08);
   }
 }
 
