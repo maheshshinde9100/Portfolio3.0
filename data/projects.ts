@@ -1,7 +1,165 @@
 import type { Project } from '@/types/project'
 
+const og = (repo: string) => `https://opengraph.githubassets.com/1/maheshshinde9100/${repo}`
+
 export const allProjects: Project[] = [
   // personal projects
+  // ------------------------------------------------------------------ personal
+  {
+    id: 'cryptenv',
+    title: 'CryptEnv',
+    description:
+      'Securely manage secrets, environments, and workspaces. AES-256-GCM encrypted vault with JWT auth, Flyway migrations, and a Spring Boot backend designed for team safe secret handling.',
+    category: 'personal',
+    tech: [
+      'Java',
+      'Spring Boot',
+      'Spring Security',
+      'PostgreSQL',
+      'AES-256-GCM',
+      'Flyway',
+      'Docker',
+      'JWT',
+    ],
+    github: 'https://github.com/maheshshinde9100/CryptEnv',
+    demo: null,
+    image: og('CryptEnv'),
+    date: '2026-06',
+  },
+  {
+    id: 'attendiq',
+    title: 'AttendIQ',
+    description:
+      'Enterprise grade AI attendance system combining face recognition, fraud detection, and predictive analytics across a Spring Boot, React, and FastAPI stack with Llama 3.',
+    category: 'personal',
+    tech: ['Spring Boot', 'React', 'FastAPI', 'PostgreSQL', 'OpenCV', 'Ollama', 'Llama 3'],
+    github: 'https://github.com/maheshshinde9100/AttendIQ',
+    demo: null,
+    image: og('AttendIQ'),
+    date: '2026-04',
+  },
+  {
+    id: 'redirectx',
+    title: 'RedirectX',
+    description:
+      'Fault tolerant URL shortening service with custom aliases, click analytics, rate limiting, caching, and distributed ID generation. Built for high availability with Kafka and a bloom filter backed cache.',
+    category: 'personal',
+    tech: [
+      'Java',
+      'Spring Boot',
+      'Kafka',
+      'Redis',
+      'PostgreSQL',
+      'Docker',
+      'Bloom filter',
+      'Base62',
+    ],
+    github: 'https://github.com/maheshshinde9100/RedirectX',
+    demo: null,
+    image: og('RedirectX'),
+    date: '2026-05',
+  },
+  {
+    id: 'maitri-verse',
+    title: 'MaitriVerse',
+    description:
+      'Realtime communication platform built as Spring Boot microservices, with service discovery, messaging, notifications, and video and audio calling over WebSocket, WebRTC, Kafka, Redis, and MongoDB.',
+    category: 'personal',
+    tech: [
+      'Spring Boot',
+      'Spring Cloud',
+      'Netflix Eureka',
+      'WebSocket',
+      'WebRTC',
+      'Kafka',
+      'Redis',
+      'MongoDB',
+    ],
+    github: 'https://github.com/maheshshinde9100/MaitriVerse',
+    demo: null,
+    image: '/thumbnails/maitri-connect-thumbnail.png',
+    date: '2026-03',
+  },
+  {
+    id: 'localcab',
+    title: 'LocalCab',
+    description:
+      'Full stack rural mobility platform connecting riders with verified local drivers. Secure JWT authentication, Razorpay payments, realtime booking updates, and map based ride tracking.',
+    category: 'personal',
+    tech: ['Spring Boot', 'React', 'Spring Security', 'JWT', 'Razorpay', 'Spring AI', 'Maven'],
+    github: 'https://github.com/maheshshinde9100/LocalCab',
+    demo: 'https://localcab.vercel.app',
+    image: og('LocalCab'),
+    date: '2026-02',
+  },
+  {
+    id: 'opdheal',
+    title: 'OPDHeal',
+    description:
+      'Outpatient department management system streamlining appointment scheduling, medical records, billing, and analytics with secure role based portals for patients, doctors, and admins.',
+    category: 'personal',
+    tech: [
+      'Spring Boot',
+      'React',
+      'MongoDB',
+      'Spring Security',
+      'RBAC',
+      'Razorpay',
+      'Swagger',
+    ],
+    github: 'https://github.com/maheshshinde9100/opdheal',
+    demo: null,
+    image: og('opdheal'),
+    date: '2026-01',
+  },
+  {
+    id: 'arthvion',
+    title: 'Arthvion',
+    description:
+      'Intelligent payment settlement engine for reconciling transactions across systems, shipped as a cross platform mobile application with a shared Express backend.',
+    category: 'personal',
+    tech: ['React Native', 'Expo', 'Express.js', 'Redux Toolkit', 'NativeWind', 'TypeScript'],
+    github: 'https://github.com/maheshshinde9100/Arthvion',
+    demo: null,
+    image: og('Arthvion'),
+    date: '2025-12',
+  },
+  {
+    id: 'scrapehire',
+    title: 'ScrapeHire',
+    description:
+      'Job aggregation platform that scrapes and normalises postings from multiple sources, exposing a documented FastAPI backend and a Next.js search interface.',
+    category: 'personal',
+    tech: ['FastAPI', 'Next.js', 'PostgreSQL', 'Web scraping', 'Swagger'],
+    github: 'https://github.com/maheshshinde9100/ScrapeHire',
+    demo: null,
+    image: og('ScrapeHire'),
+    date: '2025-11',
+  },
+  {
+    id: 'nyayasetu-ai',
+    title: 'NyayaSetu AI',
+    description:
+      'AI powered legal assistance platform built to make justice and legal guidance more accessible, with guided intake and plain language explanations.',
+    category: 'personal',
+    tech: ['React', 'Node.js', 'AI', 'Express.js'],
+    github: 'https://github.com/maheshshinde9100/NyayaSetu-AI',
+    demo: null,
+    image: og('NyayaSetu-AI'),
+    date: '2025-10',
+  },
+  {
+    id: 'systemdesignlab',
+    title: 'SystemDesignLab',
+    description:
+      'Interactive lab for exploring system design concepts, with OAuth2 authentication, persisted progress through Supabase, and lightweight global state.',
+    category: 'personal',
+    tech: ['React', 'Supabase', 'Zustand', 'OAuth2'],
+    github: 'https://github.com/maheshshinde9100/SystemDesignLab',
+    demo: null,
+    image: og('SystemDesignLab'),
+    date: '2025-08',
+  },
   {
     id: 'mentee-connect',
     title: 'Mentee Connect',
