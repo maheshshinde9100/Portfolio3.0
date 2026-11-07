@@ -79,8 +79,8 @@
     letter-spacing: -0.006em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    transition: background-color 400ms cubic-bezier(0.22, 1, 0.36, 1),
-      color 400ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: background-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 240ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   h1,
   h2,

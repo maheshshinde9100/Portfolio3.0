@@ -21,7 +21,7 @@ export default function Portfolio() {
   return (
     <MotionConfig
       reducedMotion="user"
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
       <ClickSpark
         sparkColor={['#7065f0', '#9fa3fc', '#ebebf4']}

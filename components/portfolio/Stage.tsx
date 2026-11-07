@@ -12,9 +12,9 @@ export default function Stage({ section, children }: { section: SectionId; child
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={section}
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0, transition: { duration: 0.42, ease: EASE } }}
-          exit={{ opacity: 0, y: -8, transition: { duration: 0.16, ease: EASE } }}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.3, ease: EASE } }}
+          exit={{ opacity: 0, y: -4, transition: { duration: 0.12, ease: EASE } }}
           className="no-scrollbar h-full w-full overflow-y-auto overflow-x-hidden"
         >
           {children}

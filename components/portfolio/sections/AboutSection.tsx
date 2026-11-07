@@ -4,16 +4,86 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Download, MapPin } from 'lucide-react'
 import SplitText from '@/components/SplitText'
+import {
+  GithubIcon,
+  LeetCodeIcon,
+  LinkedinIcon,
+  StackOverflowIcon,
+} from '@/components/portfolio/BrandIcons'
 import { profile, stats } from '@/data/profile'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
+const socials = [
+  { label: 'GitHub', href: profile.github, Icon: GithubIcon },
+  { label: 'Stack Overflow', href: profile.stackoverflow, Icon: StackOverflowIcon },
+  { label: 'LinkedIn', href: profile.linkedin, Icon: LinkedinIcon },
+  { label: 'LeetCode', href: profile.leetcode, Icon: LeetCodeIcon },
+]
+
 export default function AboutSection() {
   return (
     <section className="mx-auto flex min-h-full w-full max-w-[1160px] flex-col justify-center px-6 py-10 md:px-10 md:py-14">
-      <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+      <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+        <motion.figure
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: EASE, delay: 0.15 }}
+          className="mx-auto w-full max-w-[340px] lg:mx-0"
+        >
+          <div className="relative">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -bottom-3 -right-3 -z-10 h-full w-full rounded-[26px] border border-accent/30"
+            />
+            <div className="group overflow-hidden rounded-[26px] border border-line bg-surface">
+              <div className="relative aspect-[4/5] bg-surface-2">
+                <Image
+                  src="/profile.jpg"
+                  alt={profile.name}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 340px, 340px"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                />
+              </div>
+              <figcaption className="flex items-center justify-between gap-3 border-t border-line px-5 py-4">
+                <div className="leading-tight">
+                  <p className="text-[13px] font-medium tracking-[-0.01em] text-ink">
+                    {profile.name}
+                  </p>
+                  <p className="mt-1 text-[11px] text-muted">{profile.role}</p>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-2 text-[11px] text-muted">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                  </span>
+                  Open to work
+                </span>
+              </figcaption>
+            </div>
+          </div>
+
+          <div className="-ml-1 mt-6 flex flex-wrap items-center gap-1.5">
+            {socials.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${label} profile`}
+                title={label}
+                className="grid h-10 w-10 place-items-center rounded-xl text-muted transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-surface-2 hover:text-accent focus-visible:bg-surface-2"
+              >
+                <Icon className="h-[17px] w-[17px]" />
+              </a>
+            ))}
+          </div>
+        </motion.figure>
+
         <div>
-          <p className="eyebrow mb-5">01 / About</p>
+          <p className="eyebrow mb-5">About</p>
 
           <SplitText
             text={profile.tagline}
@@ -22,7 +92,7 @@ export default function AboutSection() {
             effect="rise"
             splitType="words"
             delay={60}
-            duration={0.75}
+          duration={0.55}
             textAlign="left"
             className="max-w-[640px] pb-1 text-4xl font-semibold leading-[1.12] tracking-[-0.03em] sm:text-5xl xl:text-[3.4rem]"
           />
@@ -81,37 +151,6 @@ export default function AboutSection() {
             ))}
           </motion.dl>
         </div>
-
-        <motion.figure
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: EASE, delay: 0.2 }}
-          className="mx-auto w-full max-w-[340px] overflow-hidden rounded-2xl border border-line bg-surface"
-        >
-          <div className="relative aspect-[4/5] bg-surface-2">
-            <Image
-              src="/profile.jpg"
-              alt={profile.name}
-              fill
-              priority
-              sizes="(max-width: 1024px) 340px, 340px"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="flex items-center justify-between gap-3 border-t border-line px-4 py-3.5">
-            <div className="leading-tight">
-              <p className="text-[13px] font-medium text-ink">{profile.name}</p>
-              <p className="text-[11px] text-muted">{profile.location}</p>
-            </div>
-            <span className="inline-flex items-center gap-2 text-[11px] text-muted">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-              </span>
-              {profile.status}
-            </span>
-          </figcaption>
-        </motion.figure>
       </div>
     </section>
   )

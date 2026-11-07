@@ -10,7 +10,7 @@ export default function CertificationsSection() {
   return (
     <section className="mx-auto flex min-h-full w-full max-w-[1180px] flex-col px-6 py-10 md:px-10 md:py-12">
       <header className="mb-8">
-        <p className="eyebrow mb-4">06 / Certifications</p>
+        <p className="eyebrow mb-4">Certifications</p>
         <h2 className="max-w-[620px] text-3xl font-semibold leading-[1.12] tracking-[-0.03em] sm:text-4xl xl:text-[2.9rem]">
           Credentials that back the craft.
         </h2>
@@ -26,7 +26,7 @@ export default function CertificationsSection() {
             key={cert.title}
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: EASE, delay: index * 0.04 }}
+            transition={{ duration: 0.3, ease: EASE, delay: index * 0.025 }}
             className="flex"
           >
             <a

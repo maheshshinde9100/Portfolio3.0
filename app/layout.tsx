@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   description:
     'Mahesh Shinde is a Java and full stack developer from Maharashtra, India, building Spring Boot services, React interfaces, and IoT systems.',
   generator: 'mahesh.dev',
+  icons: {
+    icon: '/ms-mark.svg',
+    shortcut: '/ms-mark.svg',
+    apple: '/ms-mark.svg',
+  },
   openGraph: {
     title: 'Mahesh Shinde | Full stack developer',
     description:

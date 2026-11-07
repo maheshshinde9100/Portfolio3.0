@@ -8,6 +8,7 @@ export const profile = {
   github: 'https://github.com/maheshshinde9100',
   linkedin: 'https://www.linkedin.com/in/maheshshinde9100',
   leetcode: 'https://leetcode.com/u/code-with-mahesh/',
+  stackoverflow: 'https://stackoverflow.com/users/22119667/mahesh-shinde',
   hackerrank: 'https://www.hackerrank.com/profile/maheshshinde9100',
   gfg: 'https://www.geeksforgeeks.org/user/coder_mahi/',
   resume:
@@ -23,9 +24,9 @@ export const profile = {
 }
 
 export const stats = [
-  { value: 298, suffix: '+', label: 'Problems solved' },
+  { value: 416, suffix: '+', label: 'Problems solved' },
   { value: 28, suffix: '', label: 'Google Cloud badges' },
-  { value: 30, suffix: '+', label: 'Projects shipped' },
+  { value: 30, suffix: '+', label: 'Projects Built' },
   { value: 22, suffix: '', label: 'PRs merged as admin' },
 ]
 
@@ -175,9 +176,9 @@ export const achievements: Achievement[] = [
   {
     title: 'Problem solving across platforms',
     org: 'LeetCode and GeeksforGeeks',
-    metric: '298+ solved',
+    metric: '416+ solved',
     detail:
-      '298+ data structures and algorithms problems solved with 167+ active days, backed by consistent contest and streak practice.',
+      '416+ data structures and algorithms problems solved with 167+ active days, backed by consistent contest and streak practice.',
     href: 'https://leetcode.com/u/code-with-mahesh/',
     icon: 'code',
   },

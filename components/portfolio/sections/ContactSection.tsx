@@ -45,9 +45,9 @@ export default function ContactSection() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: EASE }}
+          transition={{ duration: 0.32, ease: EASE }}
         >
-          <p className="eyebrow mb-5">07 / Contact</p>
+          <p className="eyebrow mb-5">Contact</p>
 
           <h2 className="max-w-[560px] text-3xl font-semibold leading-[1.12] tracking-[-0.03em] sm:text-4xl xl:text-[2.9rem]">
             Let us build something worth keeping.
@@ -123,7 +123,7 @@ export default function ContactSection() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
+          transition={{ duration: 0.32, ease: EASE, delay: 0.05 }}
           className="flex flex-col justify-center"
         >
           <p className="mb-4 text-xs uppercase tracking-[0.14em] text-muted">Elsewhere</p>

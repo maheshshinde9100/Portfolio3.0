@@ -10,7 +10,7 @@ export default function ExperienceSection() {
   return (
     <section className="mx-auto flex min-h-full w-full max-w-[1180px] flex-col px-6 py-10 md:px-10 md:py-12">
       <header className="mb-8">
-        <p className="eyebrow mb-4">03 / Experience</p>
+        <p className="eyebrow mb-4">Experience</p>
         <h2 className="max-w-[620px] text-3xl font-semibold leading-[1.12] tracking-[-0.03em] sm:text-4xl xl:text-[2.9rem]">
           Where the work took shape.
         </h2>
@@ -26,8 +26,8 @@ export default function ExperienceSection() {
             key={`${item.company}-${item.role}`}
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: EASE, delay: index * 0.05 }}
-            className="flex flex-col rounded-2xl border border-line bg-surface/50 p-5 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-line-strong hover:bg-surface"
+            transition={{ duration: 0.3, ease: EASE, delay: index * 0.025 }}
+            className="flex flex-col rounded-2xl border border-line bg-surface/50 p-5 transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-line-strong hover:bg-surface"
           >
             <div className="flex items-center gap-2">
               {item.highlight && <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />}

@@ -60,7 +60,7 @@ export default function WorkSection() {
   return (
     <section className="mx-auto flex min-h-full w-full max-w-[1280px] flex-col px-6 py-10 md:px-10 md:py-12">
       <header className="mb-6">
-        <p className="eyebrow mb-4">02 / Work</p>
+        <p className="eyebrow mb-4">Work</p>
         <h2 className="max-w-[620px] text-3xl font-semibold leading-[1.12] tracking-[-0.03em] sm:text-4xl xl:text-[2.9rem]">
           Built to solve. Designed to last.
         </h2>
@@ -89,7 +89,7 @@ export default function WorkSection() {
               {active && (
                 <motion.span
                   layoutId="work-filter"
-                  transition={{ duration: 0.35, ease: EASE }}
+                transition={{ duration: 0.24, ease: EASE }}
                   className="absolute inset-x-0 bottom-0 h-px bg-accent"
                 />
               )}
@@ -112,8 +112,8 @@ export default function WorkSection() {
                 rel={external ? 'noreferrer' : undefined}
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: EASE, delay: Math.min(index, 8) * 0.035 }}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/50 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-line-strong hover:bg-surface"
+                transition={{ duration: 0.28, ease: EASE, delay: Math.min(index, 4) * 0.02 }}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/50 transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-line-strong hover:bg-surface"
               >
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-surface-2">
                   <Image
@@ -121,7 +121,7 @@ export default function WorkSection() {
                     alt={project.title}
                     fill
                     sizes="(max-width: 640px) 92vw, (max-width: 1280px) 46vw, 30vw"
-                    className="object-cover object-top transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                    className="object-cover object-top transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
                   />
                   <span className="absolute left-3 top-3 rounded-full border border-line bg-bg/80 px-2 py-0.5 text-[10px] uppercase tracking-[0.12em] text-muted backdrop-blur-sm">
                     {categoryLabel[project.category]}

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
@@ -19,9 +20,14 @@ export default function Sidebar({
   return (
     <aside className="relative z-20 flex shrink-0 items-center gap-4 border-b border-line bg-surface/50 px-4 py-3 md:h-full md:w-[258px] md:flex-col md:items-stretch md:gap-0 md:border-b-0 md:border-r md:px-5 md:py-6">
       <div className="flex items-center gap-3 md:mb-9">
-        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[10px] bg-accent text-[12px] font-semibold tracking-[0.02em] text-accent-contrast">
-          {profile.initials}
-        </span>
+        <Image
+          src="/ms-mark.svg"
+          alt="MS"
+          width={40}
+          height={40}
+          priority
+          className="h-10 w-10 shrink-0 rounded-[8px]"
+        />
         <div className="leading-tight">
           <p className="text-[13px] font-medium tracking-[-0.01em] text-ink">{profile.name}</p>
           <p className="text-[11px] text-muted">{profile.role}</p>
@@ -41,14 +47,14 @@ export default function Sidebar({
               onClick={() => onSelect(section.id)}
               aria-current={isActive ? 'page' : undefined}
               className={cn(
-                'relative isolate flex shrink-0 items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:w-full',
+                'relative isolate flex shrink-0 items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] md:w-full',
                 isActive ? 'font-medium text-ink' : 'font-normal text-muted hover:text-ink',
               )}
             >
               {isActive && (
                 <motion.span
                   layoutId="nav-pill"
-                  transition={{ duration: 0.35, ease: navEase }}
+                  transition={{ duration: 0.26, ease: navEase }}
                   className="absolute inset-0 -z-10 rounded-lg bg-accent-soft"
                 />
               )}
@@ -57,9 +63,6 @@ export default function Sidebar({
                 strokeWidth={1.75}
               />
               <span className="whitespace-nowrap">{section.label}</span>
-              <span className="ml-auto hidden text-[10px] tabular-nums text-muted md:inline">
-                {section.index}
-              </span>
             </button>
           )
         })}
