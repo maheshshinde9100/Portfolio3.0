@@ -16,6 +16,16 @@ const nextConfig = {
         hostname: 'res.cloudinary.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'opengraph.githubassets.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'coresg-normal.trae.ai',
+        pathname: '/api/ide/v1/text_to_image',
+      },
     ],
   },
 }
