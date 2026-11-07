@@ -1,4 +1,5 @@
 import type { Project } from '@/types/project'
+import { getProjectThumbnail } from '@/data/cloudinary-thumbnails'
 
 const og = (repo: string) => `https://opengraph.githubassets.com/1/maheshshinde9100/${repo}`
 
@@ -189,7 +190,7 @@ export const allProjects: Project[] = [
     ],
     github: 'https://github.com/maheshshinde9100/SafePilot',
     demo: null,
-    image: '/thumbnails/safepilot-thumbnail.png',
+    image: '/thumbnails/hardware-model.webp',
     date: '2025-09',
   },
   {
@@ -482,3 +483,8 @@ export const allProjects: Project[] = [
     date: '2026-07',
   },
 ]
+
+export const allProjects: Project[] = projects.map((p) => ({
+  ...p,
+  image: getProjectThumbnail(p.id, p.image),
+}))

@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { motion } from "framer-motion"
+import Reveal from "@/components/reveal"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -75,7 +75,6 @@ export default function ProjectsGallery({ initialProjects = [], initialShowCount
               className="bg-black/40 border-white/15 text-white placeholder:text-white/60"
               aria-label="Search projects"
             />
-            <div className="pointer-events-none absolute inset-0 rounded-md blur-md opacity-0 focus-within:opacity-100 transition-opacity bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.22),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(167,139,250,.22),transparent_40%)]" />
           </div>
 
           <div className="flex items-center gap-2">
@@ -87,7 +86,7 @@ export default function ProjectsGallery({ initialProjects = [], initialShowCount
               <SelectTrigger className="w-36 bg-black/40 border-white/15 text-white">
                 <SelectValue placeholder="Tech" />
               </SelectTrigger>
-              <SelectContent className="bg-gray-900/95 text-white border-white/10 backdrop-blur-md">
+              <SelectContent className="bg-gray-900/95 text-white border-white/10">
                 {allTech.map((t) => (
                   <SelectItem key={t} value={t} className="capitalize">
                     {t}
@@ -101,16 +100,9 @@ export default function ProjectsGallery({ initialProjects = [], initialShowCount
 
       {/* Grid */}
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-        {toShow.map((p, idx) => (
-          <motion.div
-            key={p.id || p.title + idx}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: idx * 0.05 }}
-            className="group"
-          >
-            <Card className="bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 transition-all h-full overflow-hidden">
+        {toShow.map((p) => (
+          <Reveal key={p.id ?? p.title} className="group">
+            <Card className="bg-white/5 border-white/10 hover:bg-white/10 transition-colors h-full overflow-hidden">
               <ThumbnailFrame src={p.image} alt={p.title}>
                 {p.award && (
                   <div className="absolute top-3 left-3">
@@ -165,7 +157,7 @@ export default function ProjectsGallery({ initialProjects = [], initialShowCount
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </Reveal>
         ))}
       </div>
 
