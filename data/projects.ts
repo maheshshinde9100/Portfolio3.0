@@ -89,7 +89,7 @@ const projects: Project[] = [
     tech: ['Spring Boot', 'React', 'Spring Security', 'JWT', 'Razorpay', 'Spring AI', 'Maven'],
     github: 'https://github.com/maheshshinde9100/LocalCab',
     demo: 'https://localcab.vercel.app',
-    image: og('LocalCab'),
+    image: '/thumbnails/local-cab.png',
     date: '2026-02',
   },
   {
@@ -112,18 +112,18 @@ const projects: Project[] = [
     image: og('opdheal'),
     date: '2026-01',
   },
-  {
-    id: 'arthvion',
-    title: 'Arthvion',
-    description:
-      'Intelligent payment settlement engine for reconciling transactions across systems, shipped as a cross platform mobile application with a shared Express backend.',
-    category: 'personal',
-    tech: ['React Native', 'Expo', 'Express.js', 'Redux Toolkit', 'NativeWind', 'TypeScript'],
-    github: 'https://github.com/maheshshinde9100/Arthvion',
-    demo: null,
-    image: og('Arthvion'),
-    date: '2025-12',
-  },
+  // {
+  //   id: 'arthvion',
+  //   title: 'Arthvion',
+  //   description:
+  //     'Intelligent payment settlement engine for reconciling transactions across systems, shipped as a cross platform mobile application with a shared Express backend.',
+  //   category: 'personal',
+  //   tech: ['React Native', 'Expo', 'Express.js', 'Redux Toolkit', 'NativeWind', 'TypeScript'],
+  //   github: 'https://github.com/maheshshinde9100/Arthvion',
+  //   demo: null,
+  //   image: og('Arthvion'),
+  //   date: '2025-12',
+  // },
   {
     id: 'scrapehire',
     title: 'ScrapeHire',
