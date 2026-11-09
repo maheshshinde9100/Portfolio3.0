@@ -23,7 +23,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/maheshshinde9100/CryptEnv',
     demo: null,
-    image: og('CryptEnv'),
+    image: '/thumbnails/cryptenv.png',
     date: '2026-06',
   },
   {
@@ -157,7 +157,7 @@ const projects: Project[] = [
     tech: ['React', 'Supabase', 'Zustand', 'OAuth2'],
     github: 'https://github.com/maheshshinde9100/SystemDesignLab',
     demo: null,
-    image: og('SystemDesignLab'),
+    image: '/thumbnails/system-design-lab.png',
     date: '2025-08',
   },
   {
@@ -190,7 +190,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/maheshshinde9100/SafePilot',
     demo: null,
-    image: '/thumbnails/hardware-model.webp',
+    image: '/thumbnails/safepilot-hardware-model.webp',
     date: '2025-09',
   },
   {
@@ -202,8 +202,7 @@ const projects: Project[] = [
     tech: ['Java', 'Spring Security', 'Cryptography'],
     github: '',
     demo: null,
-    image:
-      'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=dark%20abstract%20cybersecurity%20visual%2C%20encrypted%20data%20shield%20built%20from%20thin%20glowing%20lines%2C%20deep%20charcoal%20background%2C%20periwinkle%20violet%20accents%2C%20minimal%20premium%203D%20render%2C%20soft%20studio%20lighting&image_size=landscape_4_3',
+    image: '/thumbnails/xtra-security.png',
     date: '2026-06',
   },
   {
@@ -239,7 +238,7 @@ const projects: Project[] = [
     tech: ['React', 'Node.js', 'MongoDB'],
     github: 'https://github.com/maheshshinde9100/PashuRaksha',
     demo: 'https://pashu-raksha-ten.vercel.app',
-    image: og('PashuRaksha'),
+    image: '/thumbnails/pashu-raksha.png',
     date: '2025-07',
   },
   {
@@ -251,7 +250,7 @@ const projects: Project[] = [
     tech: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion', 'OAuth2', 'Cloudinary'],
     github: 'https://github.com/maheshshinde9100/fullstack-instagram-clone',
     demo: 'https://insta-clone-by-mahesh-shinde.netlify.app/',
-    image: '/thumbnails/insta-clone-1-thumbnail.png',
+    image: '/thumbnails/insta-clone-thumbnail.png',
     date: '2024-07',
   },
   {
@@ -263,7 +262,7 @@ const projects: Project[] = [
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB Atlas'],
     github: 'https://github.com/maheshshinde9100/TaskTracker',
     demo: 'https://tasktracker-web.netlify.app',
-    image: og('TaskTracker'),
+    image: '/thumbnails/tasktracker-thumbnail.png',
     date: '2023-10',
   },
   {
@@ -338,7 +337,7 @@ const projects: Project[] = [
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Razorpay', 'Fast2SMS'],
     github: 'https://github.com/maheshshinde9100/Hotel-Dhanlakshmi',
     demo: 'https://hoteldhanlakshmi.netlify.app/',
-    image: '/thumbnails/hotel-dhanlakshmi-thumbnail.png',
+    image: '/thumbnails/hotel-dhanlakshmi.png',
     date: '2025-11',
   },
   {

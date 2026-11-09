@@ -12,7 +12,7 @@ const RAW: Record<string, string> = {
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716331/ms-ui-kit-thumbnail_cvq9nu.png',
   'safe-pilot':
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716339/safepilot-thumbnail_sshaur.png',
-  'maitri-connect':
+  'maitri-verse':
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716328/maitri-connect-thumbnail_zo8sfo.png',
   'codecomplexity-ai':
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716318/code-complexity-ai-thumbnail_wkldcn.png',
@@ -20,14 +20,10 @@ const RAW: Record<string, string> = {
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716323/smart-waste-bin-thumbnail_nt5ktq.png',
   'insta-clone':
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716323/insta-clone-1-thumbnail_zdy7f8.png',
-  'portfolio-v3':
-    'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716337/portfolio3.0-thumbnail_zydfoi.png',
   'portfolio-v3-hackathon':
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716337/portfolio3.0-thumbnail_zydfoi.png',
   'mentor-app':
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716325/student-mentoring-app-thumbnail_spkykm.png',
-  tasktracker:
-    'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716323/insta-clone-1-thumbnail_zdy7f8.png',
   'portfolio-v2':
     'https://res.cloudinary.com/dmso2cnst/image/upload/v1779716336/portfolio2.0-thumbnail_ailw1m.png',
   'street-supply':
