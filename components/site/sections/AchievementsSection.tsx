@@ -8,7 +8,7 @@ export default function AchievementsSection() {
     <section id="achievements" className="section">
       <div className="shell">
         <SectionHead
-          index="05"
+          index="06"
           label="Recognition"
           title="Proof of the work."
           lede="Open source merges, contest streaks, cloud badges, and hackathon placements."

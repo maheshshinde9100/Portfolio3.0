@@ -9,7 +9,7 @@ export default function WorkSection() {
           index="02"
           label="Work"
           title="Shipped, live, and on GitHub."
-          lede="Client deliveries, developer tools, and open source packages. Every card links to a live build or the source."
+          lede="A curated sequence — a merged Mastercard library fix, production client platforms, and open source tooling I maintain."
         />
         <WorkGrid />
       </div>

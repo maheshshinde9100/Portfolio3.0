@@ -44,7 +44,7 @@ export default function ContactSection() {
     <section id="contact" className="section">
       <div className="shell">
         <SectionHead
-          index="07"
+          index="08"
           label="Contact"
           title="Have something worth building?"
           lede="Backend work, full-stack products, or a tricky integration. I reply to every serious message."

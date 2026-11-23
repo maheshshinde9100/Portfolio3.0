@@ -8,7 +8,7 @@ export default function ExperienceSection() {
     <section id="experience" className="section">
       <div className="shell">
         <SectionHead
-          index="03"
+          index="04"
           label="Experience"
           title="Five teams, five ways of working."
           lede="Internships and programs across backend engineering, open source, data science, and mobile development."

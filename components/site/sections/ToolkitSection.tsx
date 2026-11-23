@@ -7,7 +7,7 @@ export default function ToolkitSection() {
     <section id="toolkit" className="section">
       <div className="shell">
         <SectionHead
-          index="04"
+          index="05"
           label="Toolkit"
           title="What I reach for."
           lede="A working set across backend services, frontend systems, cloud, and connected hardware."

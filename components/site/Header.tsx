@@ -9,8 +9,8 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { href: '#profile', label: 'Profile', index: '01' },
   { href: '#work', label: 'Work', index: '02' },
-  { href: '#experience', label: 'Experience', index: '03' },
-  { href: '#contact', label: 'Contact', index: '07' },
+  { href: '#experience', label: 'Experience', index: '04' },
+  { href: '#contact', label: 'Contact', index: '08' },
 ]
 
 export default function Header() {

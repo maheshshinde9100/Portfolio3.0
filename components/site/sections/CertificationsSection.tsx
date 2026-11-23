@@ -8,7 +8,7 @@ export default function CertificationsSection() {
     <section id="certifications" className="section">
       <div className="shell">
         <SectionHead
-          index="06"
+          index="07"
           label="Certifications"
           title="Verified learning."
           lede="Certificates and bootcamps that back the day to day work."

@@ -479,3 +479,28 @@ export const allProjects: Project[] = [
     date: '2026-07',
   },
 ]
+
+// Curated display order for the main work grid — strongest work first.
+const featuredOrder = [
+  'client-encryption-java',
+  'cryptenv',
+  'mentee-connect',
+  'ms-ui-kit',
+  'safe-pilot',
+  'shellreq',
+  'localcab',
+  'maitri-verse',
+  'fund-for-bharat',
+  'hotel-dhanlakshmi',
+  'mentor-app',
+  'systemdesignlab',
+  'insta-clone',
+]
+
+export const featuredProjects: Project[] = featuredOrder
+  .map((id) => allProjects.find((project) => project.id === id))
+  .filter((project): project is Project => Boolean(project))
+
+export const miniProjects: Project[] = allProjects
+  .filter((project) => !featuredOrder.includes(project.id ?? ''))
+  .sort((a, b) => (b.date || '').localeCompare(a.date || ''))

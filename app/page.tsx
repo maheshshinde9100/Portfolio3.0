@@ -4,6 +4,7 @@ import Reveal from '@/components/site/Reveal'
 import Footer from '@/components/site/Footer'
 import ProfileSection from '@/components/site/sections/ProfileSection'
 import WorkSection from '@/components/site/sections/WorkSection'
+import MiniProjectsSection from '@/components/site/sections/MiniProjectsSection'
 import ExperienceSection from '@/components/site/sections/ExperienceSection'
 import ToolkitSection from '@/components/site/sections/ToolkitSection'
 import AchievementsSection from '@/components/site/sections/AchievementsSection'
@@ -19,6 +20,7 @@ export default function HomePage() {
         <div>
           <ProfileSection />
           <WorkSection />
+          <MiniProjectsSection />
           <ExperienceSection />
           <ToolkitSection />
           <AchievementsSection />

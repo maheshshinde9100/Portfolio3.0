@@ -16,7 +16,7 @@ export default function SectionHead({
       data-reveal
       className="grid gap-4 lg:grid-cols-[10rem_minmax(0,1fr)] lg:gap-12"
     >
-      <p className="label h-fit pt-1.5">
+      <p className="label h-fit whitespace-nowrap pt-1.5">
         <span className="tabular text-faint">{index}</span>
         <span className="h-px w-6 bg-line-strong" aria-hidden="true" />
         {label}
