@@ -21,15 +21,16 @@ export type SectionId =
 export type SectionMeta = {
   id: SectionId
   label: string
+  short: string
   icon: LucideIcon
 }
 
 export const sections: SectionMeta[] = [
-  { id: 'about', label: 'About', icon: UserRound },
-  { id: 'work', label: 'Work', icon: FolderKanban },
-  { id: 'experience', label: 'Experience', icon: BriefcaseBusiness },
-  { id: 'toolkit', label: 'Toolkit', icon: Wrench },
-  { id: 'achievements', label: 'Achievements', icon: Trophy },
-  { id: 'certifications', label: 'Certifications', icon: BadgeCheck },
-  { id: 'contact', label: 'Contact', icon: Mail },
+  { id: 'about', label: 'About', short: 'About', icon: UserRound },
+  { id: 'work', label: 'Work', short: 'Work', icon: FolderKanban },
+  { id: 'experience', label: 'Experience', short: 'Exp', icon: BriefcaseBusiness },
+  { id: 'toolkit', label: 'Toolkit', short: 'Tools', icon: Wrench },
+  { id: 'achievements', label: 'Achievements', short: 'Awards', icon: Trophy },
+  { id: 'certifications', label: 'Certifications', short: 'Certs', icon: BadgeCheck },
+  { id: 'contact', label: 'Contact', short: 'Contact', icon: Mail },
 ]

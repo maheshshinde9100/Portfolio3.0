@@ -1,9 +1,6 @@
 import type { Project } from '@/types/project'
-import { getProjectThumbnail } from '@/data/cloudinary-thumbnails'
 
-const og = (repo: string) => `https://opengraph.githubassets.com/1/maheshshinde9100/${repo}`
-
-const projects: Project[] = [
+export const allProjects: Project[] = [
   // ------------------------------------------------------------------ personal
   {
     id: 'cryptenv',
@@ -35,7 +32,7 @@ const projects: Project[] = [
     tech: ['Spring Boot', 'React', 'FastAPI', 'PostgreSQL', 'OpenCV', 'Ollama', 'Llama 3'],
     github: 'https://github.com/maheshshinde9100/AttendIQ',
     demo: null,
-    image: og('AttendIQ'),
+    image: '/thumbnails/tiles/attendiq.png',
     date: '2026-04',
   },
   {
@@ -56,7 +53,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/maheshshinde9100/RedirectX',
     demo: null,
-    image: og('RedirectX'),
+    image: '/thumbnails/tiles/redirectx.png',
     date: '2026-05',
   },
   {
@@ -109,7 +106,7 @@ const projects: Project[] = [
     ],
     github: 'https://github.com/maheshshinde9100/opdheal',
     demo: null,
-    image: og('opdheal'),
+    image: '/thumbnails/tiles/opdheal.png',
     date: '2026-01',
   },
   // {
@@ -133,7 +130,7 @@ const projects: Project[] = [
     tech: ['FastAPI', 'Next.js', 'PostgreSQL', 'Web scraping', 'Swagger'],
     github: 'https://github.com/maheshshinde9100/ScrapeHire',
     demo: null,
-    image: og('ScrapeHire'),
+    image: '/thumbnails/tiles/scrapehire.png',
     date: '2025-11',
   },
   {
@@ -145,7 +142,7 @@ const projects: Project[] = [
     tech: ['React', 'Node.js', 'AI', 'Express.js'],
     github: 'https://github.com/maheshshinde9100/NyayaSetu-AI',
     demo: null,
-    image: og('NyayaSetu-AI'),
+    image: '/thumbnails/tiles/nyayasetu-ai.png',
     date: '2025-10',
   },
   {
@@ -274,7 +271,7 @@ const projects: Project[] = [
     tech: ['JavaScript', 'HTML', 'CSS', 'Netlify'],
     github: 'https://github.com/maheshshinde9100/JapaneeseKanjiQuizApp',
     demo: 'https://japaneese-kanji-practice.netlify.app/',
-    image: og('JapaneeseKanjiQuizApp'),
+    image: '/thumbnails/tiles/kanji-quiz.png',
     date: '2023-08',
   },
   {
@@ -414,7 +411,7 @@ const projects: Project[] = [
     tech: ['JavaScript', 'React', 'Node.js'],
     github: 'https://github.com/maheshshinde9100/hcltech-amplified-r2-project',
     demo: 'https://hcltechamplifiedhackathon.vercel.app',
-    image: og('hcltech-amplified-r2-project'),
+    image: '/thumbnails/tiles/hcltech-r2.png',
     date: '2025-08',
   },
   {
@@ -426,7 +423,7 @@ const projects: Project[] = [
     tech: ['JavaScript', 'HTML', 'CSS'],
     github: 'https://github.com/maheshshinde9100/CodeCanvas-Hackthon',
     demo: null,
-    image: og('CodeCanvas-Hackthon'),
+    image: '/thumbnails/tiles/codecanvas.png',
     date: '2024-09',
   },
 
@@ -477,13 +474,8 @@ const projects: Project[] = [
     tech: ['Java', 'JWE', 'AES', 'Cryptography', 'Maven'],
     github: 'https://github.com/Mastercard/client-encryption-java',
     demo: null,
-    image: 'https://opengraph.githubassets.com/1/Mastercard/client-encryption-java',
+    image: '/thumbnails/tiles/mastercard-encryption.png',
     award: 'PR #128 merged',
     date: '2026-07',
   },
 ]
-
-export const allProjects: Project[] = projects.map((p) => ({
-  ...p,
-  image: getProjectThumbnail(p.id, p.image),
-}))

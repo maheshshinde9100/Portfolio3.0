@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <rect width="500" height="500" rx="96" fill="#f4f2ec"/>
+  <rect x="12" y="12" width="476" height="476" rx="84" fill="none" stroke="#16150f" stroke-opacity="0.16"/>
+  <text
+    x="250"
+    y="320"
+    fill="#16150f"
+    font-family="Poppins, Arial, sans-serif"
+    font-size="178"
+    font-weight="600"
+    letter-spacing="-14"
+    text-anchor="middle"
+  >MS</text>
+  <circle cx="366" cy="366" r="15" fill="#26543c"/>
+</svg>

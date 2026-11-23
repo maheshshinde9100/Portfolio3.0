@@ -13,20 +13,20 @@ export const profile = {
   gfg: 'https://www.geeksforgeeks.org/user/coder_mahi/',
   resume:
     'https://drive.google.com/file/d/190ngRUJrSDnAvsPEN3Jy_t-JiI8POi8W/view?usp=drive_link',
-  status: 'Available for thoughtful work',
+  status: 'Open to backend and full-stack roles',
   tagline: 'I build backend systems and the interfaces that sit on top of them.',
   intro:
-    'Full stack developer from Maharashtra, India. I turn complex requirements into reliable, human centred web products, from Spring Boot services to React interfaces and IoT hardware.',
+    'Full stack developer from Nashik, India. I work mostly in Java and Spring Boot, with React on the front end. I have shipped client projects, developer tools, and open source packages.',
   about: [
-    'I am Mahesh, a Java and full stack developer with a bias for clean architecture, calm interfaces, and software that earns its keep.',
-    'My work stretches from Spring Boot backends and secure APIs to React experiences, Android applications, cloud deployment, and IoT systems.',
+    'I am Mahesh, a full stack developer from Nashik. Most of my work starts on the server with Java and Spring Boot, then moves outward to React interfaces, Android apps, and the occasional ESP8266 board.',
+    'I like systems that are easy to reason about: clear modules, secure APIs, and screens that do not make people stop and think. I have shipped for clients, maintained an open source UI kit, and deployed everything from a VPS behind Nginx to Vercel.',
   ],
 }
 
 export const stats = [
   { value: 416, suffix: '+', label: 'Problems solved' },
   { value: 28, suffix: '', label: 'Google Cloud badges' },
-  { value: 30, suffix: '+', label: 'Projects Built' },
+  { value: 30, suffix: '+', label: 'Projects built' },
   { value: 22, suffix: '', label: 'PRs merged as admin' },
 ]
 
@@ -46,7 +46,7 @@ export const experiences: Experience[] = [
     role: 'Backend Developer Intern',
     company: 'GolokaIT',
     detail:
-      'Building full stack products with Spring Boot, React, and Spring Security. Delivered and deployed Fund For Bharat to a Hostinger VPS with Nginx and PM2.',
+      'Building full stack products with Spring Boot, React, and Spring Security. Delivered Fund For Bharat and deployed it to a Hostinger VPS behind Nginx and PM2.',
     tags: ['Spring Boot', 'React', 'Spring Security', 'Nginx'],
     highlight: true,
   },
@@ -55,7 +55,7 @@ export const experiences: Experience[] = [
     role: 'Open Source Contributor and Project Admin',
     company: 'GirlScript Summer of Code (GSSoC 26)',
     detail:
-      'Contributor across multiple OSS repositories and Project Admin for MS-UI-KIT, reviewing and merging 22 pull requests from 11 contributors while maintaining the component library and release process.',
+      'Project Admin for MS-UI-KIT, where I reviewed and merged 22 pull requests from 11 contributors and kept the component library and release process moving. Also contributed fixes across several other repositories.',
     tags: ['Open source', 'Code review', 'Mentoring', 'React', 'npm'],
     href: 'https://github.com/maheshshinde9100/ms-ui-kit',
     highlight: true,
@@ -65,23 +65,21 @@ export const experiences: Experience[] = [
     role: 'Data Science Intern',
     company: 'Celebal Technologies (CEI)',
     detail:
-      'Applied data science and machine learning concepts through an industry focused internship program with weekly graded assignments.',
+      'Worked through an industry data science program with weekly graded assignments covering Python and machine learning basics.',
     tags: ['Python', 'Data science', 'Machine learning'],
   },
   {
     date: 'Jun 2023',
     role: 'Android Application Development',
     company: 'ATJOIN Pvt. Ltd',
-    detail:
-      'Developed, tested, and debugged Android applications with Java and the Android SDK.',
+    detail: 'Built, tested, and debugged Android applications with Java and the Android SDK.',
     tags: ['Android', 'Java', 'SDK'],
   },
   {
     date: 'Apr 2023',
     role: 'Web Development',
     company: 'CodeClause',
-    detail:
-      'Worked across frontend and backend delivery, collaboration, and project workflows.',
+    detail: 'Worked on frontend and backend tasks across short project cycles.',
     tags: ['Frontend', 'Backend', 'Collaboration'],
   },
 ]
