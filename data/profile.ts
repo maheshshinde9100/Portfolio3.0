@@ -12,7 +12,7 @@ export const profile = {
   hackerrank: 'https://www.hackerrank.com/profile/maheshshinde9100',
   gfg: 'https://www.geeksforgeeks.org/user/coder_mahi/',
   resume:
-    'https://drive.google.com/file/d/190ngRUJrSDnAvsPEN3Jy_t-JiI8POi8W/view?usp=drive_link',
+    'https://drive.google.com/file/d/1WPKyHXwK9AtDJpmVcaU7tnmnt4nsu7XW/view?usp=sharing',
   status: 'Open to backend and full-stack roles',
   tagline: 'I build backend systems and the interfaces that sit on top of them.',
   intro:
